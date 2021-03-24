@@ -1,0 +1,27 @@
+﻿<Window x:Class="ProgectMangoRF.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgectMangoRF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="AliceBlue"
+        Title="Info"
+        Height="400"
+        Width="300"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        ResizeMode="NoResize"
+        >
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Name="TabBar" Height="20">
+            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Info" Name="InfoBtn" IsEnabled="False"/>
+            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn"/>
+            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" IsEnabled="False"/>
+            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn"/>
+        </StackPanel>
+        <TextBox IsReadOnly="True" Background="#FFC800" BorderBrush="#FFC800" Text="Random Fights (Project Mango)" Foreground="Black" FontFamily="Lato Light" FontSize="22"/>
+        <TextBox IsReadOnly="True" Name="_TextBox" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Stretch"/>
+    </StackPanel>
+</Window>
