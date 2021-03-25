@@ -15,15 +15,19 @@
         MinWidth="1280"
         MaxHeight="1440"
         MaxWidth="2560"
+        ResizeMode="CanMinimize"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         >
-    <StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Name="TabBar" Height="20">
-            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Info" Name="InfoBtn"/>
-            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn"/>
-            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn"/>
-            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn"/>
-        </StackPanel>
-        <Frame HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Frame0"/>
-    </StackPanel>
+    <Grid>
+        <Grid Name="TabBar" Height="20" VerticalAlignment="Top">
+            <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Back" Name="BackBtn" HorizontalAlignment="Left" ToolTip="Back"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Info" Name="InfoBtn" ToolTip="Info"/>
+                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn" ToolTip="Minimize"/>
+                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" ToolTip="Maximize"/>
+                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn" ToolTip="Close"/>
+            </StackPanel>
+        </Grid>
+        <Frame Name="Frame0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" NavigationUIVisibility="Hidden" Margin="0,20,0,0"/>
+    </Grid>
 </Window>

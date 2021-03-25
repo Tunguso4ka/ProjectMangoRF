@@ -1,0 +1,32 @@
+﻿<Page x:Class="ProgectMangoRF.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProgectMangoRF"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="SettingsPage">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="DarkMode: " Name="DarkModeTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <CheckBox Name="DarkModeCheckBox"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Screen pixels: " Style="{StaticResource TextBlockLight}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Player name: " Style="{StaticResource TextBlockLight}" Name="PlayerNameTextBlock"/>
+                    <TextBox Width="100" Name="PlayerNameTextBox"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button Content="Save" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SaveBtn" Name="SaveBtn"/>
+            <Button Content="Save and restart" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SaveAndRestartBtn" Name="SaveAndRestartBtn"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,58 @@
+﻿<Page x:Class="ProgectMangoRF.NewGamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProgectMangoRF"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="NewGamePage">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Cheats:" Name="CheatsTextBlock" Style="{StaticResource TextBlockLight}"/>
+                <CheckBox/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="With bot:" Name="BotTextBlock" Style="{StaticResource TextBlockLight}"/>
+                <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="BotCheckBox" Name="BotCheckBox"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Random server:" Name="RandomServerTextBlock" Style="{StaticResource TextBlockLight}"/>
+                <CheckBox IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Full random:" Name="FullRandomTextBlock" Style="{StaticResource TextBlockLight}"/>
+                <CheckBox/>
+            </StackPanel>
+            <Separator Margin="0,5"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Text="Your special:" Name="YourSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <RadioButton Content="Bomb" Name="UserRadioButtonBomb" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Strenght potion" Name="UserRadioButtonStrenght" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Poison potion" Name="UserRadioButtonPoison" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Shield" Name="UserRadioButtonShield" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="XP potion" Name="UserRadioButtonXP" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Random" Name="UserRadioButtonRandom" Style="{StaticResource RadioButtonLight}"/>
+                </StackPanel>
+                <Separator Margin="5,0"/>
+                <StackPanel Name="BotSpecialStackPanel" Visibility="Collapsed">
+                    <TextBlock Text="Bot special:" Name="BotSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <RadioButton Content="Bomb" Name="BotRadioButtonBomb" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Strenght potion" Name="BotRadioButtonStrenght" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Poison potion" Name="BotRadioButtonPoison" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Shield" Name="BotRadioButtonShield" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="XP potion" Name="BotRadioButtonXP" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Random" Name="BotRadioButtonRandom" Style="{StaticResource RadioButtonLight}"/>
+                </StackPanel>
+            </StackPanel>
+            
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button Content="Back" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="BackBtn" Name="BackBtn"/>
+            <Button Content="Play" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PlayBtn" Name="PlayBtn"/>
+        </StackPanel>
+    </Grid>
+</Page>

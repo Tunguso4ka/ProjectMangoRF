@@ -15,13 +15,16 @@
         ResizeMode="NoResize"
         >
     <StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Name="TabBar" Height="20">
-            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Info" Name="InfoBtn" IsEnabled="False"/>
-            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn"/>
-            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" IsEnabled="False"/>
-            <Button FontFamily="Segoe MDL2 Assets" Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn"/>
-        </StackPanel>
-        <TextBox IsReadOnly="True" Background="#FFC800" BorderBrush="#FFC800" Text="Random Fights (Project Mango)" Foreground="Black" FontFamily="Lato Light" FontSize="22"/>
+        <Grid Name="TabBar" Height="20">
+            <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Back" Name="BackBtn" HorizontalAlignment="Left" ToolTip="Back" IsEnabled="False"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Info" Name="InfoBtn" ToolTip="Info" IsEnabled="False"/>
+                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn" ToolTip="Minimize"/>
+                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" ToolTip="Maximize" IsEnabled="False"/>
+                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn" ToolTip="Close"/>
+            </StackPanel>
+        </Grid>
+        <TextBox IsReadOnly="True" Background="#FFC800" BorderBrush="#FFC800" Text="Random Fights (Project Mango)" Foreground="Black" FontFamily="Lato Light" FontSize="20"/>
         <TextBox IsReadOnly="True" Name="_TextBox" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Stretch"/>
     </StackPanel>
 </Window>

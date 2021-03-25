@@ -21,11 +21,15 @@ namespace ProgectMangoRF
     public partial class MainWindow : Window
     {
         public InfoWindow _InfoWindow;
+        public MainPage _MainPage;
+        public SettingsPage _SettingsPage;
+        public NewGamePage _NewGamePage;
 
         public MainWindow()
         {
             InitializeComponent();
             ApplySettings();
+            Frame0.Navigate(_MainPage);
         }
 
         void ApplySettings()
@@ -48,6 +52,9 @@ namespace ProgectMangoRF
         void Pages()
         {
             _InfoWindow = new InfoWindow();
+            _MainPage = new MainPage();
+            _SettingsPage = new SettingsPage();
+            _NewGamePage = new NewGamePage();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -88,6 +95,14 @@ namespace ProgectMangoRF
                 {
                     Application.Current.Dispatcher.Invoke(Application.Current.Shutdown);
                 }
+            }
+            else if ((string)ClickedButton.Tag == "Back")
+            {
+                if(Frame0.CanGoBack)
+                {
+                    Frame0.GoBack();
+                }
+
             }
         }
 

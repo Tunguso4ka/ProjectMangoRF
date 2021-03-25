@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProgectMangoRF.Properties {
+namespace ProjectMangoRF.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -44,6 +44,18 @@ namespace ProgectMangoRF.Properties {
             }
             set {
                 this["DarkMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NoName")]
+        public string PlayerName {
+            get {
+                return ((string)(this["PlayerName"]));
+            }
+            set {
+                this["PlayerName"] = value;
             }
         }
     }
