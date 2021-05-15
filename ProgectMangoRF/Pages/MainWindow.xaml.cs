@@ -47,6 +47,7 @@ namespace ProgectMangoRF
                 MiniBtn.Style = (Style)FindResource("TabBarButtonDark");
                 MaxiBtn.Style = (Style)FindResource("TabBarButtonDark");
                 CloseBtn.Style = (Style)FindResource("TabBarButtonDark");
+                BackBtn.Style = (Style)FindResource("TabBarButtonDark");
             }
         }
         void Pages()

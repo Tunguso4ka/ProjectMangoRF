@@ -46,7 +46,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Foreground" Value="#FFC800"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -69,8 +69,8 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="#FFC800"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -94,7 +94,7 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="Black"/>
-                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Background" Value="#FFC800"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -103,7 +103,15 @@
             <Setter Property="Foreground" Value="Black"/>
         </Style>
 
-        <Style x:Key="TextBlockDark" TargetType="TextBlock">
+        <Style x:Key="TextBlockDark" TargetType="TextBox">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style x:Key="TextBoxLight" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <Style x:Key="TextBoxDark" TargetType="TextBox">
             <Setter Property="Foreground" Value="White"/>
         </Style>
 

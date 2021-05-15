@@ -24,6 +24,7 @@ namespace ProgectMangoRF
         {
             InitializeComponent();
             ChangeTheme();
+            News1TextBox.Text = "Test\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\ns";
         }
 
         void ChangeTheme()
@@ -35,6 +36,9 @@ namespace ProgectMangoRF
                 AboutBtn.Style = (Style)FindResource("MenuButtonDark");
                 SettingsBtn.Style = (Style)FindResource("MenuButtonDark");
                 ExitBtn.Style = (Style)FindResource("MenuButtonDark");
+
+                NewsTextBox.Style = (Style)FindResource("TextBlockDark");
+                News1TextBox.Style = (Style)FindResource("TextBlockDark");
             }
         }
 

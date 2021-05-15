@@ -58,5 +58,17 @@ namespace ProgectMangoRF.Properties {
                 this["PlayerName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ScreenVariant {
+            get {
+                return ((int)(this["ScreenVariant"]));
+            }
+            set {
+                this["ScreenVariant"] = value;
+            }
+        }
     }
 }
