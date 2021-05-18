@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProgectMangoRF
 {
@@ -20,10 +10,10 @@ namespace ProgectMangoRF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public InfoWindow _InfoWindow;
         public MainPage _MainPage;
         public SettingsPage _SettingsPage;
         public NewGamePage _NewGamePage;
+        public AboutPage _AboutPage;
 
         public MainWindow()
         {
@@ -43,7 +33,6 @@ namespace ProgectMangoRF
             if(Properties.Settings.Default.DarkMode == true)
             {
                 this.Background = Brushes.Black;
-                InfoBtn.Style = (Style)FindResource("TabBarButtonDark");
                 MiniBtn.Style = (Style)FindResource("TabBarButtonDark");
                 MaxiBtn.Style = (Style)FindResource("TabBarButtonDark");
                 CloseBtn.Style = (Style)FindResource("TabBarButtonDark");
@@ -52,28 +41,16 @@ namespace ProgectMangoRF
         }
         void Pages()
         {
-            _InfoWindow = new InfoWindow();
             _MainPage = new MainPage();
             _SettingsPage = new SettingsPage();
             _NewGamePage = new NewGamePage();
+            _AboutPage = new AboutPage();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button ClickedButton = (Button)sender;
-            if ((string)ClickedButton.Tag == "Info")
-            {
-                try
-                {
-                    _InfoWindow.Show();
-                    _InfoWindow.WindowState = WindowState.Normal;
-                }
-                catch
-                {
-
-                }
-            }
-            else if ((string)ClickedButton.Tag == "Minimize")
+            if ((string)ClickedButton.Tag == "Minimize")
             {
                 this.WindowState = WindowState.Minimized;
             }

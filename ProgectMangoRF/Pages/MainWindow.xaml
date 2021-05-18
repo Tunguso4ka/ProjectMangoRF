@@ -22,7 +22,6 @@
         <Grid Name="TabBar" Height="20" VerticalAlignment="Top">
             <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Back" Name="BackBtn" HorizontalAlignment="Left" ToolTip="Back"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Info" Name="InfoBtn" ToolTip="Info"/>
                 <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn" ToolTip="Minimize"/>
                 <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" ToolTip="Maximize"/>
                 <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn" ToolTip="Close"/>

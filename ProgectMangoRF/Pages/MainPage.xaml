@@ -8,24 +8,24 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="MainPage">
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <StackPanel>
-            <Separator Height="360" Background="Transparent"/>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Background="#FFC800">
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Button Content="Continue" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ContinueBtn" Name="ContinueBtn"/>
-                    <Button Content="New game" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="NewGameBtn" Name="NewGameBtn"/>
-                    <Button Content="About" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="AboutBtn" Name="AboutBtn"/>
-                    <Button Content="Settings" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SettingsBtn" Name="SettingsBtn"/>
-                    <Button Content="Exit" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ExitBtn" Name="ExitBtn"/>
-                </StackPanel>
-                <TextBox IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" Text="Random Fights" Foreground="Black" FontFamily="Lato Light" FontSize="72" VerticalAlignment="Center"/>
-                <TextBox IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" Text="V0.9.0 (Project Mango)" Foreground="Black" FontFamily="Lato Light" FontSize="24" VerticalAlignment="Center"/>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel Margin="0,650,0,0">
+                <TextBox IsReadOnly="True" Text="News: (Scroll to view)" FontFamily="Lato Light" FontSize="72" VerticalAlignment="Center" Name="NewsTextBox"/>
+                <TextBox IsReadOnly="True" Text="There were be news." FontFamily="Lato Light" FontSize="24" VerticalAlignment="Center" Name="News1TextBox"/>
             </StackPanel>
-            <StackPanel>
-                <TextBox IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" Text="News:" Foreground="Black" FontFamily="Lato Light" FontSize="72" VerticalAlignment="Center" Name="NewsTextBox"/>
-                <TextBox IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" Text="There were be news." Foreground="Black" FontFamily="Lato Light" FontSize="24" VerticalAlignment="Center" Name="News1TextBox"/>
+        </ScrollViewer>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Background="#FFC800">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Button Content="Continue" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ContinueBtn" Name="ContinueBtn"/>
+                <Button Content="New game" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="NewGameBtn" Name="NewGameBtn"/>
+                <Button Content="About" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="AboutBtn" Name="AboutBtn"/>
+                <Button Content="Settings" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SettingsBtn" Name="SettingsBtn"/>
+                <Button Content="Exit" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ExitBtn" Name="ExitBtn"/>
             </StackPanel>
+            <TextBox Name="RFTextBox" Style="{StaticResource TextBoxLight}" IsReadOnly="True" Text="Random Fights" FontFamily="Lato Light" FontSize="72" VerticalAlignment="Center"/>
+            <TextBox Name="VersionTextBox" Style="{StaticResource TextBoxLight}" IsReadOnly="True" Text="V0.9.0 (Project Mango)" FontFamily="Lato Light" FontSize="24" VerticalAlignment="Center"/>
         </StackPanel>
-    </ScrollViewer>
+    </Grid>
 </Page>

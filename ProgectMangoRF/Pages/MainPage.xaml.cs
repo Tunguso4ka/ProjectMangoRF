@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProgectMangoRF
 {
@@ -20,6 +9,7 @@ namespace ProgectMangoRF
     /// </summary>
     public partial class MainPage : Page
     {
+        int ContinueClicks;
         public MainPage()
         {
             InitializeComponent();
@@ -37,8 +27,8 @@ namespace ProgectMangoRF
                 SettingsBtn.Style = (Style)FindResource("MenuButtonDark");
                 ExitBtn.Style = (Style)FindResource("MenuButtonDark");
 
-                NewsTextBox.Style = (Style)FindResource("TextBlockDark");
-                News1TextBox.Style = (Style)FindResource("TextBlockDark");
+                NewsTextBox.Style = (Style)FindResource("TextBoxDark");
+                News1TextBox.Style = (Style)FindResource("TextBoxDark");
             }
         }
 
@@ -47,7 +37,25 @@ namespace ProgectMangoRF
             Button ClickedButton = (Button)sender;
             if((string)ClickedButton.Tag == "ContinueBtn")
             {
-                
+                if(Properties.Settings.Default.SaveIsReal == true)
+                {
+
+                }
+                else
+                {
+                    RFTextBox.Text = "Sorry, u dont have any saves.";
+                    VersionTextBox.Text = "Random Fights\n" + Assembly.GetExecutingAssembly().GetName().Version + " (Project Mango)";
+                    ContinueClicks += 1;
+                    if (ContinueClicks >= 10 && ContinueClicks < 49)
+                    {
+                        RFTextBox.Text = "Can you click on another button...";
+                    }
+                    else if (ContinueClicks == 50)
+                    {
+                        RFTextBox.Text = "Thats not funny...";
+                        ContinueClicks = 0;
+                    }
+                }
             }
             else if ((string)ClickedButton.Tag == "NewGameBtn")
             {
@@ -55,7 +63,7 @@ namespace ProgectMangoRF
             }
             else if ((string)ClickedButton.Tag == "AboutBtn")
             {
-
+                ((MainWindow)Window.GetWindow(this)).Frame0.Navigate(((MainWindow)Window.GetWindow(this))._AboutPage);
             }
             else if ((string)ClickedButton.Tag == "SettingsBtn")
             {

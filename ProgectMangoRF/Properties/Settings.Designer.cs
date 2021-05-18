@@ -70,5 +70,17 @@ namespace ProgectMangoRF.Properties {
                 this["ScreenVariant"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SaveIsReal {
+            get {
+                return ((bool)(this["SaveIsReal"]));
+            }
+            set {
+                this["SaveIsReal"] = value;
+            }
+        }
     }
 }
