@@ -9,14 +9,15 @@
       Title="SettingsPage">
 
     <Grid>
-        <ScrollViewer>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="DarkMode: " Name="DarkModeTextBlock" Style="{StaticResource TextBlockLight}"/>
                     <CheckBox Name="DarkModeCheckBox"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Screen pixels: " Style="{StaticResource TextBlockLight}"/>
+                    <TextBlock Text="Fullscreen: " Name="FullscreenTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <CheckBox Name="FullscreenCheckBox"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Player name: " Style="{StaticResource TextBlockLight}" Name="PlayerNameTextBlock"/>

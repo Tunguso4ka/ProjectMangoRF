@@ -27,6 +27,8 @@
                 <Button Content="" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn" ToolTip="Close"/>
             </StackPanel>
         </Grid>
-        <Frame Name="Frame0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" NavigationUIVisibility="Hidden" Margin="0,20,0,0"/>
+        <Border Name="FrameBorder" BorderBrush="#FFC800" BorderThickness="2" Margin="0,20,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Frame Name="Frame0" NavigationUIVisibility="Hidden"/>
+        </Border>
     </Grid>
 </Window>

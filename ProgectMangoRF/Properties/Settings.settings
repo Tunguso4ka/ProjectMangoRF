@@ -11,8 +11,8 @@
     <Setting Name="PlayerName" Type="System.String" Scope="User">
       <Value Profile="(Default)">NoName</Value>
     </Setting>
-    <Setting Name="ScreenVariant" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="IsFullscreen" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="SaveIsReal" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

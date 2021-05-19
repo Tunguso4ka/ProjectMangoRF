@@ -61,13 +61,13 @@ namespace ProgectMangoRF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int ScreenVariant {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsFullscreen {
             get {
-                return ((int)(this["ScreenVariant"]));
+                return ((bool)(this["IsFullscreen"]));
             }
             set {
-                this["ScreenVariant"] = value;
+                this["IsFullscreen"] = value;
             }
         }
         

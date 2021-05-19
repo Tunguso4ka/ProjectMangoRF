@@ -52,18 +52,35 @@ namespace ProgectMangoRF
             Button ClickedButton = (Button)sender;
             if ((string)ClickedButton.Tag == "Minimize")
             {
-                this.WindowState = WindowState.Minimized;
+                WindowState = WindowState.Minimized;
             }
             else if ((string)ClickedButton.Tag == "Maximize")
             {
-                if(this.WindowState == WindowState.Maximized)
+                if(WindowState == WindowState.Maximized)
                 {
-                    this.WindowState = WindowState.Normal;
+                    if(Properties.Settings.Default.IsFullscreen == true)
+                    {
+                        FrameBorder.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 200, 0));
+                    }
+                    else
+                    {
+                        ResizeMode = ResizeMode.CanMinimize;
+                    }
+                    WindowState = WindowState.Normal;
                     MaxiBtn.Content = "";
+                }
+                else if (Properties.Settings.Default.IsFullscreen == true)
+                {
+                    FrameBorder.BorderBrush = Brushes.Transparent;
+                    WindowState = WindowState.Maximized;
+                    MaxiBtn.Content = "";
                 }
                 else
                 {
-                    this.WindowState = WindowState.Maximized;
+                    WindowStyle = WindowStyle.SingleBorderWindow;
+                    ResizeMode = ResizeMode.CanResize;
+                    WindowState = WindowState.Maximized;
+                    WindowStyle = WindowStyle.None;
                     MaxiBtn.Content = "";
                 }
             }
@@ -80,7 +97,6 @@ namespace ProgectMangoRF
                 {
                     Frame0.GoBack();
                 }
-
             }
         }
 
