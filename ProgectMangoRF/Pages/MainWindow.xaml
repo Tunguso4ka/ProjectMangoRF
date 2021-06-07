@@ -5,18 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgectMangoRF"
         mc:Ignorable="d"
+        
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="White"
         Title="RandomFights"
+        
         Height="720"
         Width="1280"
         MinHeight="720"
         MinWidth="1280"
-        MaxHeight="1440"
-        MaxWidth="2560"
-        ResizeMode="CanMinimize"
+        
+        ResizeMode="CanResizeWithGrip"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        StateChanged="Window_StateChanged"
+        
         >
     <Grid>
         <Grid Name="TabBar" Height="20" VerticalAlignment="Top">
@@ -30,5 +33,6 @@
         <Border Name="FrameBorder" BorderBrush="#FFC800" BorderThickness="2" Margin="0,20,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Frame Name="Frame0" NavigationUIVisibility="Hidden"/>
         </Border>
+        <ProgressBar Height="10" VerticalAlignment="Bottom" IsIndeterminate="True" Background="Transparent" BorderBrush="Transparent" Foreground="#FFC800" Name="LoadingProgressBar" Visibility="Collapsed"/>
     </Grid>
 </Window>

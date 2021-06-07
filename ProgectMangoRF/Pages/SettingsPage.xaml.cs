@@ -75,8 +75,8 @@ namespace ProgectMangoRF
             else if ((string)ClickedButton.Tag == "SaveAndRestartBtn")
             {
                 Save();
-                MainWindow _MainWindow = new MainWindow();
-                _MainWindow.Show();
+                MainWindow NewMainWindow = new MainWindow();
+                NewMainWindow.Show();
                 ((MainWindow)Window.GetWindow(this)).Close();
             }
         }

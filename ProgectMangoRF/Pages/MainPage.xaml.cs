@@ -14,7 +14,7 @@ namespace ProgectMangoRF
         {
             InitializeComponent();
             ChangeTheme();
-            News1TextBox.Text = "Test\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\ns";
+            News1TextBox.Text = "Sorry no news today.";
         }
 
         void ChangeTheme()
@@ -35,7 +35,7 @@ namespace ProgectMangoRF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button ClickedButton = (Button)sender;
-            if((string)ClickedButton.Tag == "ContinueBtn")
+            if ((string)ClickedButton.Tag == "ContinueBtn")
             {
                 if(Properties.Settings.Default.SaveIsReal == true)
                 {
