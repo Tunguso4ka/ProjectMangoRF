@@ -11,7 +11,7 @@
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
-            <StackPanel Margin="0,650,0,0">
+            <StackPanel Margin="0,650,0,0" Visibility="Collapsed">
                 <TextBox IsReadOnly="True" Text="News: (Scroll to view)" FontFamily="Lato Light" FontSize="72" VerticalAlignment="Center" Name="NewsTextBox"/>
                 <TextBox IsReadOnly="True" Text="There were be news." FontFamily="Lato Light" FontSize="24" VerticalAlignment="Center" Name="News1TextBox"/>
             </StackPanel>

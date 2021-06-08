@@ -16,7 +16,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="With bot:" Name="BotTextBlock" Style="{StaticResource TextBlockLight}"/>
-                <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="BotCheckBox" Name="BotCheckBox"/>
+                <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="BotCheckBox" Name="BotCheckBox" IsChecked="True" IsEnabled="False"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Random server:" Name="RandomServerTextBlock" Style="{StaticResource TextBlockLight}"/>
@@ -38,7 +38,7 @@
                     <RadioButton Content="Random" Name="UserRadioButtonRandom" Style="{StaticResource RadioButtonLight}"/>
                 </StackPanel>
                 <Separator Margin="5,0"/>
-                <StackPanel Name="BotSpecialStackPanel" Visibility="Collapsed">
+                <StackPanel Name="BotSpecialStackPanel" Visibility="Visible">
                     <TextBlock Text="Bot special:" Name="BotSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
                     <RadioButton Content="Bomb" Name="BotRadioButtonBomb" Style="{StaticResource RadioButtonLight}"/>
                     <RadioButton Content="Strenght potion" Name="BotRadioButtonStrenght" Style="{StaticResource RadioButtonLight}"/>

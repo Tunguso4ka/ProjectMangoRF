@@ -23,6 +23,10 @@
                     <TextBlock Text="Player name: " Style="{StaticResource TextBlockLight}" Name="PlayerNameTextBlock"/>
                     <TextBox Width="100" Name="PlayerNameTextBox"/>
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Use old saves: " Name="OldSavesTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <CheckBox Name="OldSavesCheckBox"/>
+                </StackPanel>
             </StackPanel>
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">

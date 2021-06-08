@@ -121,7 +121,7 @@ namespace ProgectMangoRF
             CheckBox CheckedCheckBox = (CheckBox)sender;
             if((string)CheckedCheckBox.Tag == "BotCheckBox")
             {
-                BotSpecialStackPanel.Visibility = Visibility.Visible;
+                //BotSpecialStackPanel.Visibility = Visibility.Visible;
             }
         }
 
@@ -144,6 +144,8 @@ namespace ProgectMangoRF
             else if ((string)ClickedButton.Tag == "PlayBtn")
             {
                 CheckSettings();
+                //if () {}
+                ((MainWindow)Window.GetWindow(this)).Frame0.Navigate(((MainWindow)Window.GetWindow(this))._GamePage);
             }
         }
     }
