@@ -14,7 +14,6 @@ namespace ProgectMangoRF
         public SettingsPage _SettingsPage;
         public NewGamePage _NewGamePage;
         public AboutPage _AboutPage;
-        public GamePage _GamePage;
 
         public MainWindow()
         {
@@ -46,7 +45,6 @@ namespace ProgectMangoRF
             _SettingsPage = new SettingsPage();
             _NewGamePage = new NewGamePage();
             _AboutPage = new AboutPage();
-            _GamePage = new GamePage();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

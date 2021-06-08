@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProgectMangoRF
 {
@@ -20,7 +8,13 @@ namespace ProgectMangoRF
     /// </summary>
     public partial class NewGamePage : Page
     {
-        int UserSpecial, BotSpecial;
+        int UserSpecial = 0, BotSpecial = 0;
+
+        public GamePage _GamePage;
+
+        public Player Player0;
+        public Player Player1;
+
         public NewGamePage()
         {
             InitializeComponent();
@@ -134,6 +128,22 @@ namespace ProgectMangoRF
             }
         }
 
+        void MakeStandartInts(Player _Player)
+        {
+            _Player.Lvl = 1;
+            _Player.Xp = 0;
+
+            _Player.MaxHealth = 100;
+            _Player.Health = 100;
+            _Player.Heal = 15;
+            _Player.Shield = 0;
+
+            _Player.Damage = 10;
+            _Player.AdditionalDamage = 0;
+
+            _Player.PoisonEffectTime = 0;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button ClickedButton = (Button)sender;
@@ -144,8 +154,21 @@ namespace ProgectMangoRF
             else if ((string)ClickedButton.Tag == "PlayBtn")
             {
                 CheckSettings();
-                //if () {}
-                ((MainWindow)Window.GetWindow(this)).Frame0.Navigate(((MainWindow)Window.GetWindow(this))._GamePage);
+
+                //Player0 (user)
+                Player0 = new Player();
+                Player0.Name = Properties.Settings.Default.PlayerName;
+                Player0.Spell = UserSpecial;
+                MakeStandartInts(Player0);
+
+                //Player1 (bot/second user)
+                Player1 = new Player();
+                Player1.Name = "Name";
+                Player1.Spell = BotSpecial;
+                MakeStandartInts(Player1);
+
+                _GamePage = new GamePage(((MainWindow)Window.GetWindow(this))._NewGamePage);
+                ((MainWindow)Window.GetWindow(this)).Frame0.Navigate(_GamePage);
             }
         }
     }

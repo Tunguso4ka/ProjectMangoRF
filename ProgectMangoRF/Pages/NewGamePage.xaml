@@ -30,7 +30,7 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
                     <TextBlock Text="Your special:" Name="YourSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
-                    <RadioButton Content="Bomb" Name="UserRadioButtonBomb" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Bomb" Name="UserRadioButtonBomb" Style="{StaticResource RadioButtonLight}" IsChecked="True"/>
                     <RadioButton Content="Strenght potion" Name="UserRadioButtonStrenght" Style="{StaticResource RadioButtonLight}"/>
                     <RadioButton Content="Poison potion" Name="UserRadioButtonPoison" Style="{StaticResource RadioButtonLight}"/>
                     <RadioButton Content="Shield" Name="UserRadioButtonShield" Style="{StaticResource RadioButtonLight}"/>
@@ -40,7 +40,7 @@
                 <Separator Margin="5,0"/>
                 <StackPanel Name="BotSpecialStackPanel" Visibility="Visible">
                     <TextBlock Text="Bot special:" Name="BotSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
-                    <RadioButton Content="Bomb" Name="BotRadioButtonBomb" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Content="Bomb" Name="BotRadioButtonBomb" Style="{StaticResource RadioButtonLight}" IsChecked="True"/>
                     <RadioButton Content="Strenght potion" Name="BotRadioButtonStrenght" Style="{StaticResource RadioButtonLight}"/>
                     <RadioButton Content="Poison potion" Name="BotRadioButtonPoison" Style="{StaticResource RadioButtonLight}"/>
                     <RadioButton Content="Shield" Name="BotRadioButtonShield" Style="{StaticResource RadioButtonLight}"/>

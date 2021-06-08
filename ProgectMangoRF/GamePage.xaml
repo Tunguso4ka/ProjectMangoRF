@@ -12,11 +12,11 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30">
             <StackPanel Orientation="Horizontal">
                 <WrapPanel VerticalAlignment="Center">
-                    <TextBlock Text="Name0"/>
+                    <TextBlock Text="Name0" Name="Name0TextBlock"/>
                     <Separator Width="5"/>
-                    <TextBlock Text="SpellName0"/>
+                    <TextBlock Text="SpellName0" Name="SpellName0TextBlock"/>
                     <Separator Width="5"/>
-                    <TextBlock Text="Lvl0"/>
+                    <TextBlock Text="Lvl0" Name="Lvl0TextBlock"/>
                     <Separator Width="5"/>
                 </WrapPanel>
                 <ProgressBar Name="HealthBar0" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
@@ -29,11 +29,11 @@
 
                 <WrapPanel VerticalAlignment="Center">
                     <Separator Width="5"/>
-                    <TextBlock Text="Lvl1"/>
+                    <TextBlock Text="Lvl1" Name="Lvl1TextBlock"/>
                     <Separator Width="5"/>
-                    <TextBlock Text="SpellName1"/>
+                    <TextBlock Text="SpellName1" Name="SpellName1TextBlock"/>
                     <Separator Width="5"/>
-                    <TextBlock Text="Name1"/>
+                    <TextBlock Text="Name1" Name="Name1TextBlock"/>
                 </WrapPanel>
 
             </StackPanel>
@@ -44,8 +44,10 @@
             <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30">
+            <Button Content="Heal" Click="Button_Click" Tag="Heal0"/>
             <Button Content="Kick" Click="Button_Click" Tag="Kick0"/>
             <Button Content="Kick" Click="Button_Click" Tag="Kick1"/>
+            <Button Content="Heal" Click="Button_Click" Tag="Heal1"/>
         </StackPanel>
     </Grid>
 </Page>
