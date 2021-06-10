@@ -29,27 +29,27 @@ namespace ProgectMangoRF
 
         public void Spell(Player ActivePlayer, Player PassivePlayer)
         {
-            //spells: grenade 0, shield 1, ultra heal 2, add additional damage 3, poison 4, additional xp 5
+            //spells: grenade 0, shield 1, ultra heal 2, add additional damage 1, poison 4, additional xp 5
 
-            if(ActivePlayer.Spell == 0)
+            if (ActivePlayer.Spell == 0)
             {
-                
+                ActivePlayer.Health -= ActivePlayer.Damage * 2;
             }
             else if (ActivePlayer.Spell == 1)
             {
-
+                ActivePlayer.Shield += PassivePlayer.Damage / 10;
             }
             else if (ActivePlayer.Spell == 2)
             {
-
+                ActivePlayer.Health += ActivePlayer.Heal * 2;
             }
             else if (ActivePlayer.Spell == 3)
             {
-
+                ActivePlayer.AdditionalDamage += ActivePlayer.Damage / 10;
             }
             else if (ActivePlayer.Spell == 4)
             {
-
+                PassivePlayer.PoisonEffectTime += 5;
             }
             else if (ActivePlayer.Spell == 5)
             {

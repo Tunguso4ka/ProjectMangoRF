@@ -54,6 +54,7 @@ namespace ProgectMangoRF
                 TimeRegulator();
                 HealthRegulator();
                 StatusRegulator();
+                LevelRegulator();
 
                 await Task.Delay(250);
             }
@@ -83,6 +84,7 @@ namespace ProgectMangoRF
             }
             HealthBar0.Maximum = _NewGamePage.Player0.MaxHealth;
             HealthBar0.Value = _NewGamePage.Player0.Health;
+            HealthBar0TextBlock.Text = _NewGamePage.Player0.Health + "/ \n" + _NewGamePage.Player0.MaxHealth;
 
             if (_NewGamePage.Player1.Health > _NewGamePage.Player1.MaxHealth)
             {
@@ -94,6 +96,7 @@ namespace ProgectMangoRF
             }
             HealthBar1.Maximum = _NewGamePage.Player1.MaxHealth;
             HealthBar1.Value = _NewGamePage.Player1.Health;
+            HealthBar1TextBlock.Text = _NewGamePage.Player1.Health + "/ \n" + _NewGamePage.Player1.MaxHealth;
 
             //HealthBar logic
             if (HealthBar0.Value == _NewGamePage.Player0.MaxHealth)
@@ -133,7 +136,15 @@ namespace ProgectMangoRF
 
         void LevelRegulator()
         {
+            if (_NewGamePage.Player0.Xp >= 100)
+            {
+                _NewGamePage.Player0.LevelUp();
+            }
 
+            if (_NewGamePage.Player1.Xp >= 100)
+            {
+                _NewGamePage.Player1.LevelUp();
+            }
         }
 
         void StatusRegulator()
@@ -143,6 +154,52 @@ namespace ProgectMangoRF
 
             Lvl0TextBlock.Text = "Lvl: " + _NewGamePage.Player0.Lvl;
             Lvl1TextBlock.Text = "Lvl: " + _NewGamePage.Player1.Lvl;
+
+            //spells: grenade 0, shield 1, ultra heal 2, add additional damage 3, poison 4, additional xp 5
+
+            switch(_NewGamePage.Player0.Spell)
+            {
+                case 0:
+                    SpellName0TextBlock.Text = "Grenade";
+                    break;
+                case 1:
+                    SpellName0TextBlock.Text = "Shield: " + _NewGamePage.Player0.Shield;
+                    break;
+                case 2:
+                    SpellName0TextBlock.Text = "Ultra Heal";
+                    break;
+                case 3:
+                    SpellName0TextBlock.Text = "Additional Damage: " + _NewGamePage.Player0.AdditionalDamage;
+                    break;
+                case 4:
+                    SpellName0TextBlock.Text = "Poison time: " + _NewGamePage.Player1.PoisonEffectTime;
+                    break;
+                case 5:
+                    SpellName0TextBlock.Text = "Additional XP";
+                    break;
+            }
+
+            switch (_NewGamePage.Player1.Spell)
+            {
+                case 0:
+                    SpellName1TextBlock.Text = "Grenade";
+                    break;
+                case 1:
+                    SpellName1TextBlock.Text = "Shield: " + _NewGamePage.Player1.Shield;
+                    break;
+                case 2:
+                    SpellName1TextBlock.Text = "Ultra Heal";
+                    break;
+                case 3:
+                    SpellName1TextBlock.Text = "Additional Damage: " + _NewGamePage.Player1.AdditionalDamage;
+                    break;
+                case 4:
+                    SpellName1TextBlock.Text = "Poison time: " + _NewGamePage.Player0.PoisonEffectTime;
+                    break;
+                case 5:
+                    SpellName1TextBlock.Text = "Additional XP";
+                    break;
+            }
 
         }
 
@@ -173,6 +230,18 @@ namespace ProgectMangoRF
                 _Actions.Heal(_NewGamePage.Player1);
                 ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
                 ProcessTextBox1.Text = "Player1 heal themself\n" + ProcessTextBox1.Text;
+            }
+            else if ((string)ClickedButton.Tag == "Spell0")
+            {
+                _Actions.Spell(_NewGamePage.Player0, _NewGamePage.Player1);
+                ProcessTextBox0.Text = "Player0 use spell\n" + ProcessTextBox0.Text;
+                ProcessTextBox1.Text = " \n" + ProcessTextBox1.Text;
+            }
+            else if ((string)ClickedButton.Tag == "Spell1")
+            {
+                _Actions.Spell(_NewGamePage.Player1, _NewGamePage.Player0);
+                ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
+                ProcessTextBox1.Text = "Player1 use spell\n" + ProcessTextBox1.Text;
             }
         }
     }

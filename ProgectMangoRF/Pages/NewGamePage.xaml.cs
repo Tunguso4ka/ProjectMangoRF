@@ -51,65 +51,6 @@ namespace ProgectMangoRF
             }
         }
 
-        void CheckSettings()
-        {
-            if(UserRadioButtonBomb.IsChecked == true)
-            {
-                UserSpecial = 1;
-            }
-            else if (UserRadioButtonPoison.IsChecked == true)
-            {
-                UserSpecial = 2;
-            }
-            else if (UserRadioButtonStrenght.IsChecked == true)
-            {
-                UserSpecial = 3;
-            }
-            else if (UserRadioButtonShield.IsChecked == true)
-            {
-                UserSpecial = 4;
-            }
-            else if (UserRadioButtonXP.IsChecked == true)
-            {
-                UserSpecial = 5;
-            }
-            else if (UserRadioButtonRandom.IsChecked == true)
-            {
-                UserSpecial = 0;
-            }
-            if(BotCheckBox.IsChecked == true)
-            {
-                if (BotRadioButtonBomb.IsChecked == true)
-                {
-                    BotSpecial = 1;
-                }
-                else if (BotRadioButtonPoison.IsChecked == true)
-                {
-                    BotSpecial = 2;
-                }
-                else if (BotRadioButtonStrenght.IsChecked == true)
-                {
-                    BotSpecial = 3;
-                }
-                else if (BotRadioButtonShield.IsChecked == true)
-                {
-                    BotSpecial = 4;
-                }
-                else if (BotRadioButtonXP.IsChecked == true)
-                {
-                    BotSpecial = 5;
-                }
-                else if (BotRadioButtonRandom.IsChecked == true)
-                {
-                    BotSpecial = 0;
-                }
-            }
-            else
-            {
-                BotSpecial = 6;
-            }
-        }
-
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox CheckedCheckBox = (CheckBox)sender;
@@ -144,6 +85,74 @@ namespace ProgectMangoRF
             _Player.PoisonEffectTime = 0;
         }
 
+        private void UserRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //spells: grenade 0, shield 1, ultra heal 2, add additional damage 3, poison 4, additional xp 5
+            RadioButton CheckedRadioButton = (RadioButton)sender;
+            if((string)CheckedRadioButton.Tag == "grenade")
+            {
+                UserSpecial = 0;
+            }
+            else if ((string)CheckedRadioButton.Tag == "shield")
+            {
+                UserSpecial = 1;
+            }
+            else if ((string)CheckedRadioButton.Tag == "ultraheal")
+            {
+                UserSpecial = 2;
+            }
+            else if ((string)CheckedRadioButton.Tag == "additionaldamage")
+            {
+                UserSpecial = 3;
+            }
+            else if ((string)CheckedRadioButton.Tag == "poison")
+            {
+                UserSpecial = 4;
+            }
+            else if ((string)CheckedRadioButton.Tag == "xp")
+            {
+                UserSpecial = 5;
+            }
+            else if ((string)CheckedRadioButton.Tag == "random")
+            {
+                UserSpecial = 0;
+            }
+        }
+
+        private void BotRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //spells: grenade 0, shield 1, ultra heal 2, add additional damage 3, poison 4, additional xp 5
+            RadioButton CheckedRadioButton = (RadioButton)sender;
+            if ((string)CheckedRadioButton.Tag == "grenade")
+            {
+                BotSpecial = 0;
+            }
+            else if ((string)CheckedRadioButton.Tag == "shield")
+            {
+                BotSpecial = 1;
+            }
+            else if ((string)CheckedRadioButton.Tag == "ultraheal")
+            {
+                BotSpecial = 2;
+            }
+            else if ((string)CheckedRadioButton.Tag == "additionaldamage")
+            {
+                BotSpecial = 3;
+            }
+            else if ((string)CheckedRadioButton.Tag == "poison")
+            {
+                BotSpecial = 4;
+            }
+            else if ((string)CheckedRadioButton.Tag == "xp")
+            {
+                BotSpecial = 5;
+            }
+            else if ((string)CheckedRadioButton.Tag == "random")
+            {
+                BotSpecial = 0;
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button ClickedButton = (Button)sender;
@@ -153,8 +162,6 @@ namespace ProgectMangoRF
             }
             else if ((string)ClickedButton.Tag == "PlayBtn")
             {
-                CheckSettings();
-
                 //Player0 (user)
                 Player0 = new Player();
                 Player0.Name = Properties.Settings.Default.PlayerName;

@@ -19,6 +19,7 @@
                     <TextBlock Text="Lvl0" Name="Lvl0TextBlock"/>
                     <Separator Width="5"/>
                 </WrapPanel>
+                <TextBlock Text="0/100" Name="HealthBar0TextBlock"/>
                 <ProgressBar Name="HealthBar0" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
             </StackPanel>
             <Separator Width="5"/>
@@ -26,6 +27,7 @@
             <Separator Width="5"/>
             <StackPanel Orientation="Horizontal">
                 <ProgressBar Name="HealthBar1" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
+                <TextBlock Text="0/100" Name="HealthBar1TextBlock"/>
 
                 <WrapPanel VerticalAlignment="Center">
                     <Separator Width="5"/>
@@ -44,10 +46,12 @@
             <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30">
-            <Button Content="Heal" Click="Button_Click" Tag="Heal0"/>
-            <Button Content="Kick" Click="Button_Click" Tag="Kick0"/>
-            <Button Content="Kick" Click="Button_Click" Tag="Kick1"/>
-            <Button Content="Heal" Click="Button_Click" Tag="Heal1"/>
+            <Button Content="Spell" Click="Button_Click" Tag="Spell0" Width="100"/>
+            <Button Content="Heal" Click="Button_Click" Tag="Heal0" Width="100"/>
+            <Button Content="Kick" Click="Button_Click" Tag="Kick0" Width="100"/>
+            <Button Content="Kick" Click="Button_Click" Tag="Kick1" Width="100"/>
+            <Button Content="Heal" Click="Button_Click" Tag="Heal1" Width="100"/>
+            <Button Content="Spell" Click="Button_Click" Tag="Spell1" Width="100"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -23,5 +23,18 @@
         //Magic system
         public int Spell { get; set; }
         public int PoisonEffectTime { get; set; }
+
+        public void LevelUp()
+        {
+            Xp -= 100;
+            Lvl += 1;
+
+            Heal += 5;
+            MaxHealth += 50;
+
+            Damage += 5;
+
+            PoisonEffectTime = 0;
+        }
     }
 }
