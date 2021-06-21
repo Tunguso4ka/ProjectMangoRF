@@ -21,20 +21,61 @@
         public int AdditionalDamage { get; set; }
 
         //Magic system
+        public string SpellName { get; set; }
         public int Spell { get; set; }
         public int PoisonEffectTime { get; set; }
 
         public void LevelUp()
         {
-            Xp -= 100;
-            Lvl += 1;
+            if (Xp >= 100)
+            {
+                Xp -= 100;
+                Lvl += 1;
 
-            Heal += 5;
-            MaxHealth += 50;
+                Heal += 5;
+                MaxHealth += 50;
 
-            Damage += 5;
+                Damage += 5;
 
-            PoisonEffectTime = 0;
+                PoisonEffectTime = 0;
+            }
         }
+
+        public void HealthRegulator()
+        {
+            if (Health > MaxHealth)
+            {
+                Health = MaxHealth;
+            }
+            else if (Health < 0)
+            {
+                Health = 0;
+            }
+        }
+
+        public void SetSpellName()
+        {
+            switch (Spell)
+            {
+                case 0:
+                    SpellName = "Bomb";
+                    break;
+                case 1:
+                    SpellName = "Shield";
+                    break;
+                case 2:
+                    SpellName = "Double heal";
+                    break;
+                case 3:
+                    SpellName = "Additional Damage potion";
+                    break;
+                case 4:
+                    SpellName = "Poison potion";
+                    break;
+                case 5:
+                    SpellName = "XP potion";
+                    break;
+            }
+}
     }
 }

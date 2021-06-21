@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ProgectMangoRF
@@ -14,6 +15,8 @@ namespace ProgectMangoRF
 
         public Player Player0;
         public Player Player1;
+
+        public bool FullRandom = false;
 
         public NewGamePage()
         {
@@ -58,6 +61,10 @@ namespace ProgectMangoRF
             {
                 //BotSpecialStackPanel.Visibility = Visibility.Visible;
             }
+            else if ((string)CheckedCheckBox.Tag == "FullRandomCheckBox")
+            {
+                FullRandom = true;
+            }
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
@@ -66,6 +73,10 @@ namespace ProgectMangoRF
             if ((string)CheckedCheckBox.Tag == "BotCheckBox")
             {
                 BotSpecialStackPanel.Visibility = Visibility.Collapsed;
+            }
+            else if ((string)CheckedCheckBox.Tag == "FullRandomCheckBox")
+            {
+                FullRandom = false;
             }
         }
 
@@ -115,7 +126,8 @@ namespace ProgectMangoRF
             }
             else if ((string)CheckedRadioButton.Tag == "random")
             {
-                UserSpecial = 0;
+                Random _Random = new Random();
+                UserSpecial = _Random.Next(0,7);
             }
         }
 
@@ -149,7 +161,8 @@ namespace ProgectMangoRF
             }
             else if ((string)CheckedRadioButton.Tag == "random")
             {
-                BotSpecial = 0;
+                Random _Random = new Random();
+                BotSpecial = _Random.Next(0, 7);
             }
         }
 

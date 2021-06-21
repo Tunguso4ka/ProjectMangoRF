@@ -24,7 +24,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Full random:" Name="FullRandomTextBlock" Style="{StaticResource TextBlockLight}"/>
-                <CheckBox/>
+                <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="FullRandomCheckBox" Name="FullRandomCheckBox"/>
             </StackPanel>
             <Separator Margin="0,5"/>
             <StackPanel Orientation="Horizontal">
@@ -44,7 +44,7 @@
                     <RadioButton Content="Bomb" Name="BotRadioButtonBomb" Style="{StaticResource RadioButtonLight}" IsChecked="True" Checked="BotRadioButton_Checked" Tag="grenade"/>
                     <RadioButton Content="Shield" Name="BotRadioButtonShield" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="shield"/>
                     <RadioButton Content="Double heal" Name="BotRadioButtonDoubleHeal" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="ultraheal"/>
-                    <RadioButton Content="Strenght potion" Name="BotRadioButtonStrenght" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="additionaldamage"/>
+                    <RadioButton Content="Additional Damage potion" Name="BotRadioButtonStrenght" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="additionaldamage"/>
                     <RadioButton Content="Poison potion" Name="BotRadioButtonPoison" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="poison"/>
                     <RadioButton Content="XP potion" Name="BotRadioButtonXP" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="xp"/>
                     <RadioButton Content="Random" Name="BotRadioButtonRandom" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="random"/>

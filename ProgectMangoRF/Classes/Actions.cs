@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProgectMangoRF
+﻿namespace ProgectMangoRF
 {
     public class Actions
     {
@@ -29,15 +23,15 @@ namespace ProgectMangoRF
 
         public void Spell(Player ActivePlayer, Player PassivePlayer)
         {
-            //spells: grenade 0, shield 1, ultra heal 2, add additional damage 1, poison 4, additional xp 5
+            //spells: grenade 0, shield 1, ultra heal 2, add additional damage 3, poison 4, additional xp 5
 
             if (ActivePlayer.Spell == 0)
             {
-                ActivePlayer.Health -= ActivePlayer.Damage * 2;
+                PassivePlayer.Health -= ActivePlayer.Damage * 2;
             }
             else if (ActivePlayer.Spell == 1)
             {
-                ActivePlayer.Shield += PassivePlayer.Damage / 10;
+                ActivePlayer.Shield += PassivePlayer.Damage / 5;
             }
             else if (ActivePlayer.Spell == 2)
             {
@@ -45,7 +39,7 @@ namespace ProgectMangoRF
             }
             else if (ActivePlayer.Spell == 3)
             {
-                ActivePlayer.AdditionalDamage += ActivePlayer.Damage / 10;
+                ActivePlayer.AdditionalDamage += ActivePlayer.Damage / 5;
             }
             else if (ActivePlayer.Spell == 4)
             {

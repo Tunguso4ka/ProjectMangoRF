@@ -58,48 +58,16 @@ namespace ProgectMangoRF
             {
                 if (this.WindowState == WindowState.Maximized)
                 {
-                    FrameBorder.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 200, 0));
                     WindowState = WindowState.Normal;
-                    MaxiBtn.Content = "";
+                    MaxiBtn.Content = "";
                 }
                 else
                 {
-                    FrameBorder.BorderBrush = Brushes.Transparent;
                     this.WindowStyle = WindowStyle.SingleBorderWindow;
                     this.WindowState = WindowState.Maximized;
-                    MaxiBtn.Content = "";
+                    MaxiBtn.Content = "";
                     this.WindowStyle = WindowStyle.None;
                 }
-
-                /*
-                if (WindowState == WindowState.Maximized)
-                {
-                    if(Properties.Settings.Default.IsFullscreen == true)
-                    {
-                        FrameBorder.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 200, 0));
-                    }
-                    else
-                    {
-                        ResizeMode = ResizeMode.CanMinimize;
-                    }
-                    WindowState = WindowState.Normal;
-                    MaxiBtn.Content = "";
-                }
-                else if (Properties.Settings.Default.IsFullscreen == true)
-                {
-                    FrameBorder.BorderBrush = Brushes.Transparent;
-                    WindowState = WindowState.Maximized;
-                    MaxiBtn.Content = "";
-                }
-                else
-                {
-                    WindowStyle = WindowStyle.SingleBorderWindow;
-                    ResizeMode = ResizeMode.CanResize;
-                    WindowState = WindowState.Maximized;
-                    WindowStyle = WindowStyle.None;
-                    MaxiBtn.Content = "";
-                }
-                */
             }
             else if ((string)ClickedButton.Tag == "Close")
             {
@@ -126,21 +94,10 @@ namespace ProgectMangoRF
         {
             if(this.WindowState == WindowState.Maximized)
             {
-                FrameBorder.BorderBrush = Brushes.Transparent;
                 this.WindowStyle = WindowStyle.SingleBorderWindow;
                 this.WindowState = WindowState.Maximized;
-                MaxiBtn.Content = "";
+                MaxiBtn.Content = "";
                 this.WindowStyle = WindowStyle.None;
-            }
-            else if (this.WindowState == WindowState.Minimized)
-            {
-
-            }
-            else
-            {
-                FrameBorder.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 200, 0));
-                WindowState = WindowState.Normal;
-                MaxiBtn.Content = "";
             }
         }
     }

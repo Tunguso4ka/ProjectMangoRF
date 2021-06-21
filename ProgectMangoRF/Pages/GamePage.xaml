@@ -1,0 +1,66 @@
+﻿<Page x:Class="ProgectMangoRF.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProgectMangoRF"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="GamePage">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <WrapPanel VerticalAlignment="Center">
+                    <TextBlock Text="Name0" Name="Name0TextBlock" FontSize="18"/>
+                    <Separator Width="5"/>
+                    <TextBlock Text="SpellName0" Name="SpellName0TextBlock" FontSize="18"/>
+                    <Separator Width="5"/>
+                    <TextBlock Text="Lvl0" Name="Lvl0TextBlock" FontSize="18"/>
+                    <Separator Width="5"/>
+                </WrapPanel>
+                <Grid>
+                    <ProgressBar Name="HealthBar0" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
+                    <TextBlock Text="0/100" Name="HealthBar0TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+                </Grid>
+            </StackPanel>
+            <Separator Width="5"/>
+            <TextBlock Text="Time" VerticalAlignment="Center" Name="TimeTextBlock" FontSize="18"/>
+            <Separator Width="5"/>
+            <StackPanel Orientation="Horizontal">
+                <Grid>
+                    <ProgressBar Name="HealthBar1" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
+                    <TextBlock Text="0/100" Name="HealthBar1TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+                </Grid>
+
+                <WrapPanel VerticalAlignment="Center">
+                    <Separator Width="5"/>
+                    <TextBlock Text="Lvl1" Name="Lvl1TextBlock" FontSize="18"/>
+                    <Separator Width="5"/>
+                    <TextBlock Text="SpellName1" Name="SpellName1TextBlock" FontSize="18"/>
+                    <Separator Width="5"/>
+                    <TextBlock Text="Name1" Name="Name1TextBlock" FontSize="18"/>
+                </WrapPanel>
+
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,30">
+            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0"/>
+            <Separator Width="5"/>
+            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Name="MainActionsPanel">
+            <StackPanel Orientation="Horizontal" Name="ActionsStackPanel0">
+                <Button Content="Spell" Click="Button_Click" Tag="Spell0" Width="100"/>
+                <Button Content="Heal" Click="Button_Click" Tag="Heal0" Width="100"/>
+                <Button Content="Kick" Click="Button_Click" Tag="Kick0" Width="100"/>
+            </StackPanel>
+            <TextBlock Text="Time" VerticalAlignment="Center" Name="TimeActionsTextBlock" FontSize="18"/>
+            <StackPanel Orientation="Horizontal" Name="ActionsStackPanel1">
+                <Button Content="Kick" Click="Button_Click" Tag="Kick1" Width="100"/>
+                <Button Content="Heal" Click="Button_Click" Tag="Heal1" Width="100"/>
+                <Button Content="Spell" Click="Button_Click" Tag="Spell1" Width="100"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
