@@ -1,19 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace ProgectMangoRF
+namespace ProjectMangoRF
 {
     /// <summary>
     /// Interakční logika pro AboutPage.xaml
@@ -24,6 +14,8 @@ namespace ProgectMangoRF
         {
             InitializeComponent();
             ChangeTheme();
+
+            AboutTextBox.Text = "Random Fights .\nVersion: " + Assembly.GetExecutingAssembly().GetName().Version + " (Mango)\nMade by Kira Kosova\nMy twitter: @tunguso4ka\nMy github: tunguso4ka\nI <3 Stef!\nThanks for using!";
         }
 
         void ChangeTheme()

@@ -1,7 +1,7 @@
-﻿<Application x:Class="ProgectMangoRF.App"
+﻿<Application x:Class="ProjectMangoRF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ProgectMangoRF"
+             xmlns:local="clr-namespace:ProjectMangoRF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         

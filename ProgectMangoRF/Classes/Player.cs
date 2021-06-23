@@ -1,4 +1,4 @@
-﻿namespace ProgectMangoRF
+﻿namespace ProjectMangoRF
 {
     public class Player
     {

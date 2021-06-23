@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace ProgectMangoRF
+namespace ProjectMangoRF
 {
     /// <summary>
     /// Interakční logika pro MainPage.xaml

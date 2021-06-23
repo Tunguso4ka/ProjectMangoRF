@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace ProgectMangoRF
+namespace ProjectMangoRF
 {
     /// <summary>
     /// Interakční logika pro NewGamePage.xaml
@@ -183,7 +183,7 @@ namespace ProgectMangoRF
 
                 //Player1 (bot/second user)
                 Player1 = new Player();
-                Player1.Name = "Name";
+                Player1.Name = "Bot";
                 Player1.Spell = BotSpecial;
                 MakeStandartInts(Player1);
 
