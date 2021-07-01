@@ -22,14 +22,14 @@
         
         >
     <WindowChrome.WindowChrome>
-        <WindowChrome NonClientFrameEdges="None" GlassFrameThickness="5" ResizeBorderThickness="5" CaptionHeight="0">
+        <WindowChrome x:Name="WindowChromeBorders" NonClientFrameEdges="None" GlassFrameThickness="5" ResizeBorderThickness="5" CaptionHeight="0">
         </WindowChrome>
     </WindowChrome.WindowChrome>
     <Border BorderThickness="5" BorderBrush="Black">
         <Grid>
             <Grid Name="TabBar" Height="30" VerticalAlignment="Top">
                 <Button Content="&#xF0D5;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Back" Name="BackBtn" HorizontalAlignment="Left" ToolTip="Back"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Name="RightTabBar">
                     <Button Content="&#xEF2D;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn" ToolTip="Minimize"/>
                     <Button Content="&#xF0D8;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" ToolTip="Maximize"/>
                     <Button Content="&#xEF2C;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn" ToolTip="Close"/>

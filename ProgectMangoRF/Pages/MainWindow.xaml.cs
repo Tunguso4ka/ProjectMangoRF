@@ -26,6 +26,7 @@ namespace ProjectMangoRF
         void ApplySettings()
         {
             ChangeTheme();
+            Fullscreen();
         }
 
         void ChangeTheme()
@@ -37,6 +38,15 @@ namespace ProjectMangoRF
                 MaxiBtn.Style = (Style)FindResource("TabBarButtonDark");
                 CloseBtn.Style = (Style)FindResource("TabBarButtonDark");
                 BackBtn.Style = (Style)FindResource("TabBarButtonDark");
+            }
+        }
+        void Fullscreen()
+        {
+            if(Properties.Settings.Default.IsFullscreen == true)
+            {
+                RightTabBar.Visibility = Visibility.Collapsed;
+                WindowChromeBorders.GlassFrameThickness = new Thickness(-1);
+                this.WindowState = WindowState.Maximized;
             }
         }
         void Pages()
@@ -63,10 +73,8 @@ namespace ProjectMangoRF
                 }
                 else
                 {
-                    this.WindowStyle = WindowStyle.SingleBorderWindow;
                     this.WindowState = WindowState.Maximized;
                     MaxiBtn.Content = "";
-                    this.WindowStyle = WindowStyle.None;
                 }
             }
             else if ((string)ClickedButton.Tag == "Close")
@@ -94,10 +102,10 @@ namespace ProjectMangoRF
         {
             if(this.WindowState == WindowState.Maximized)
             {
-                this.WindowStyle = WindowStyle.SingleBorderWindow;
+                WindowStyle = WindowStyle.SingleBorderWindow;
                 this.WindowState = WindowState.Maximized;
                 MaxiBtn.Content = "";
-                this.WindowStyle = WindowStyle.None;
+                WindowStyle = WindowStyle.None;
             }
         }
     }

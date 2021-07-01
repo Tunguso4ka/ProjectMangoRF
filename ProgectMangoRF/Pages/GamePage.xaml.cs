@@ -40,6 +40,8 @@ namespace ProjectMangoRF
         {
             InitializeComponent();
 
+            ChangeTheme();
+
             Player0 = RecievedNewGamePage.Player0;
             Player1 = RecievedNewGamePage.Player1;
 
@@ -56,6 +58,15 @@ namespace ProjectMangoRF
             _BotAI = new BotAI();
             _Actions = new Actions();
             Time();
+        }
+
+        void ChangeTheme()
+        {
+            if(Properties.Settings.Default.DarkMode == true)
+            {
+                ProcessTextBox0.Style = (Style)FindResource("TextBoxDark");
+                ProcessTextBox1.Style = (Style)FindResource("TextBoxDark");
+            }
         }
 
         async void Time()

@@ -21,11 +21,13 @@ namespace ProjectMangoRF
         {
             if (Properties.Settings.Default.DarkMode == true)
             {
-                ContinueBtn.Style = (Style)FindResource("MenuButtonDark");
                 NewGameBtn.Style = (Style)FindResource("MenuButtonDark");
                 AboutBtn.Style = (Style)FindResource("MenuButtonDark");
                 SettingsBtn.Style = (Style)FindResource("MenuButtonDark");
                 ExitBtn.Style = (Style)FindResource("MenuButtonDark");
+                ChallengesBtn.Style = (Style)FindResource("MenuButtonDark");
+                FighterBtn.Style = (Style)FindResource("MenuButtonDark");
+                PacksBtn.Style = (Style)FindResource("MenuButtonDark");
 
                 NewsTextBox.Style = (Style)FindResource("TextBoxDark");
                 News1TextBox.Style = (Style)FindResource("TextBoxDark");
@@ -35,29 +37,7 @@ namespace ProjectMangoRF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button ClickedButton = (Button)sender;
-            if ((string)ClickedButton.Tag == "ContinueBtn")
-            {
-                if(Properties.Settings.Default.SaveIsReal == true)
-                {
-
-                }
-                else
-                {
-                    RFTextBox.Text = "Sorry, u dont have any saves.";
-                    VersionTextBox.Text = "Random Fights\n" + Assembly.GetExecutingAssembly().GetName().Version + " (Project Mango)";
-                    ContinueClicks += 1;
-                    if (ContinueClicks >= 10 && ContinueClicks < 49)
-                    {
-                        RFTextBox.Text = "Can you click on another button...";
-                    }
-                    else if (ContinueClicks == 50)
-                    {
-                        RFTextBox.Text = "Thats not funny...";
-                        ContinueClicks = 0;
-                    }
-                }
-            }
-            else if ((string)ClickedButton.Tag == "NewGameBtn")
+            if ((string)ClickedButton.Tag == "NewGameBtn")
             {
                 ((MainWindow)Window.GetWindow(this)).Frame0.Navigate(((MainWindow)Window.GetWindow(this))._NewGamePage);
             }

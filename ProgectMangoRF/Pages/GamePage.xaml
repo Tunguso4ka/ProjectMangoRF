@@ -9,46 +9,46 @@
       Title="GamePage">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30">
-            <StackPanel Orientation="Horizontal">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="White">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Grid>
+                    <ProgressBar Name="HealthBar0" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
+                    <TextBlock Text="0/100" Name="HealthBar0TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+                </Grid>
                 <WrapPanel VerticalAlignment="Center">
+                    <Separator Width="5"/>
                     <TextBlock Text="Name0" Name="Name0TextBlock" FontSize="18"/>
                     <Separator Width="5"/>
                     <TextBlock Text="SpellName0" Name="SpellName0TextBlock" FontSize="18"/>
                     <Separator Width="5"/>
                     <TextBlock Text="Lvl0" Name="Lvl0TextBlock" FontSize="18"/>
-                    <Separator Width="5"/>
                 </WrapPanel>
-                <Grid>
-                    <ProgressBar Name="HealthBar0" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
-                    <TextBlock Text="0/100" Name="HealthBar0TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
-                </Grid>
             </StackPanel>
-            <Separator Width="5"/>
-            <TextBlock Text="Time" VerticalAlignment="Center" Name="TimeTextBlock" FontSize="18"/>
-            <Separator Width="5"/>
-            <StackPanel Orientation="Horizontal">
-                <Grid>
-                    <ProgressBar Name="HealthBar1" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
-                    <TextBlock Text="0/100" Name="HealthBar1TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
-                </Grid>
 
+            <TextBlock Text="Time" VerticalAlignment="Center" HorizontalAlignment="Center" Name="TimeTextBlock" FontSize="18"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <WrapPanel VerticalAlignment="Center">
-                    <Separator Width="5"/>
                     <TextBlock Text="Lvl1" Name="Lvl1TextBlock" FontSize="18"/>
                     <Separator Width="5"/>
                     <TextBlock Text="SpellName1" Name="SpellName1TextBlock" FontSize="18"/>
                     <Separator Width="5"/>
                     <TextBlock Text="Name1" Name="Name1TextBlock" FontSize="18"/>
+                    <Separator Width="5"/>
                 </WrapPanel>
-
+                <Grid>
+                    <ProgressBar Name="HealthBar1" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
+                    <TextBlock Text="0/100" Name="HealthBar1TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+                </Grid>
             </StackPanel>
-        </StackPanel>
+            
+        </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,30">
             <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0"/>
             <Separator Width="5"/>
             <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1"/>
         </StackPanel>
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Name="MainActionsPanel">
             <StackPanel Orientation="Horizontal" Name="ActionsStackPanel0">
                 <Button Content="Spell" Click="Button_Click" Tag="Spell0" Width="100"/>

@@ -16,16 +16,23 @@
                 <TextBox IsReadOnly="True" Text="There were be news." FontFamily="Lato Light" FontSize="24" VerticalAlignment="Center" Name="News1TextBox"/>
             </StackPanel>
         </ScrollViewer>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Background="#FFC800">
-            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Button Content="Continue" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ContinueBtn" Name="ContinueBtn"/>
-                <Button Content="New game" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="NewGameBtn" Name="NewGameBtn"/>
-                <Button Content="About" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="AboutBtn" Name="AboutBtn"/>
-                <Button Content="Settings" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SettingsBtn" Name="SettingsBtn"/>
-                <Button Content="Exit" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ExitBtn" Name="ExitBtn"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox Name="RFTextBox" Style="{StaticResource TextBoxLight}" Background="#FFC800" IsReadOnly="True" Text="Random Fights" FontSize="72" VerticalAlignment="Center" FontFamily="Segoe UI Black" TextAlignment="Center" Height="120"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Play" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="NewGameBtn" Name="NewGameBtn" Height="120" Width="240" FontWeight="Bold" FontSize="36"/>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="&#xEA8C;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="FighterBtn" Name="FighterBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Your hero"/>
+                        <Button Content="&#xF5EE;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PacksBtn" Name="PacksBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Packs"/>
+                        <Button Content="&#xF8B0;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SettingsBtn" Name="SettingsBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Settings"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="&#xEB4F;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ChallengesBtn" Name="ChallengesBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Challenges"/>
+                        <Button Content="&#xF167;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="AboutBtn" Name="AboutBtn" FontFamily="Segoe MDL2 Assets" ToolTip="About"/>
+                        <Button Content="&#xEF2C;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ExitBtn" Name="ExitBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Exit"/>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
-            <TextBox Name="RFTextBox" Style="{StaticResource TextBoxLight}" IsReadOnly="True" Text="Random Fights" FontFamily="Lato Light" FontSize="72" VerticalAlignment="Center"/>
-            <TextBox Name="VersionTextBox" Style="{StaticResource TextBoxLight}" IsReadOnly="True" Text="V0.9.0 (Project Mango)" FontFamily="Lato Light" FontSize="24" VerticalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Page>
