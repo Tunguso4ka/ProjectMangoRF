@@ -43,11 +43,12 @@
             </StackPanel>
             
         </Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,30">
-            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0"/>
+        
+        <WrapPanel HorizontalAlignment="Center" Margin="0,30,0,30">
+            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0" TextAlignment="Right"/>
             <Separator Width="5"/>
             <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1"/>
-        </StackPanel>
+        </WrapPanel>
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Name="MainActionsPanel">
             <StackPanel Orientation="Horizontal" Name="ActionsStackPanel0">
@@ -62,5 +63,13 @@
                 <Button Content="Spell" Click="Button_Click" Tag="Spell1" Width="100"/>
             </StackPanel>
         </StackPanel>
+
+        <Grid Width="300" HorizontalAlignment="Left" Name="ConsoleGrid" Visibility="Visible">
+            <TextBox Margin="0,30,0,30" Style="{StaticResource TextBoxLight}" Name="MainConsoleTextBox"/>
+            <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Bottom">
+                <TextBox Width="260" Name="TextConsoleTextBox"/>
+                <Button Style="{StaticResource TabBarButtonLight}" Content="" Click="Button_Click" Tag="EnterConsoleBtn" Name="EnterConsoleBtn"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

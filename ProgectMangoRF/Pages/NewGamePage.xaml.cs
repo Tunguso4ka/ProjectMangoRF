@@ -17,6 +17,7 @@ namespace ProjectMangoRF
         public Player Player1;
 
         public bool FullRandom = false;
+        public bool Cheats = false;
 
         public NewGamePage()
         {
@@ -65,6 +66,10 @@ namespace ProjectMangoRF
             {
                 FullRandom = true;
             }
+            else if((string)CheckedCheckBox.Tag == "CheatsCheckBox")
+            {
+                Cheats = true;
+            }
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
@@ -77,6 +82,10 @@ namespace ProjectMangoRF
             else if ((string)CheckedCheckBox.Tag == "FullRandomCheckBox")
             {
                 FullRandom = false;
+            }
+            else if ((string)CheckedCheckBox.Tag == "CheatsCheckBox")
+            {
+                Cheats = false;
             }
         }
 

@@ -21,8 +21,6 @@ namespace ProjectMangoRF
         bool IsPaused = false;
         bool IsDead = false;
 
-
-
         /*
         //test
         public int Health0 = 100, Health = 100;
@@ -33,6 +31,8 @@ namespace ProjectMangoRF
         //Players
         Actions _Actions;
         BotAI _BotAI;
+        ConsoleLogic _ConsoleLogic;
+
         Player Player0;
         Player Player1;
 
@@ -45,7 +45,7 @@ namespace ProjectMangoRF
             Player0 = RecievedNewGamePage.Player0;
             Player1 = RecievedNewGamePage.Player1;
 
-            if(RecievedNewGamePage.FullRandom == true)
+            if (RecievedNewGamePage.FullRandom == true)
             {
                 MainActionsPanel.Visibility = Visibility.Collapsed;
                 FullRandom = true;
@@ -55,8 +55,14 @@ namespace ProjectMangoRF
                 SecondsToWait = 5;
             }
 
+            if(RecievedNewGamePage.Cheats == true)
+            {
+                ConsoleGrid.Visibility = Visibility.Visible;
+            }
+
             _BotAI = new BotAI();
             _Actions = new Actions();
+            _ConsoleLogic = new ConsoleLogic();
             Time();
         }
 
@@ -312,6 +318,14 @@ namespace ProjectMangoRF
                 _Actions.Spell(Player1, Player0);
                 ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
                 ProcessTextBox1.Text = "Player1 use spell\n" + ProcessTextBox1.Text;
+            }
+
+            else if ((string)ClickedButton.Tag == "EnterConsoleBtn")
+            {
+                if(TextConsoleTextBox.Text != "")
+                {
+                    _ConsoleLogic.Command(TextConsoleTextBox.Text, this);
+                }
             }
         }
     }

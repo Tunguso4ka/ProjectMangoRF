@@ -17,7 +17,7 @@
             </StackPanel>
         </ScrollViewer>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBox Name="RFTextBox" Style="{StaticResource TextBoxLight}" Background="#FFC800" IsReadOnly="True" Text="Random Fights" FontSize="72" VerticalAlignment="Center" FontFamily="Segoe UI Black" TextAlignment="Center" Height="120"/>
+            <TextBox Name="RFTextBox" Style="{StaticResource TextBoxLight}" Background="#FFC800" IsReadOnly="True" Text="Random Fights" FontSize="36" VerticalAlignment="Center" FontFamily="Segoe UI Black" TextAlignment="Center" Height="120"/>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Play" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="NewGameBtn" Name="NewGameBtn" Height="120" Width="240" FontWeight="Bold" FontSize="36"/>
                 <StackPanel>
