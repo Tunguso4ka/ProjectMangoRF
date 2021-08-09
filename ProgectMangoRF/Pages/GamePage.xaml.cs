@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -16,10 +18,12 @@ namespace ProjectMangoRF
 
         double SecondsToAction = 1;
         int SecondsToWait = 1;
+
         bool FullRandom = false;
         bool Turn = true;
         bool IsPaused = false;
         bool IsDead = false;
+        bool Cheats = false;
 
         /*
         //test
@@ -33,8 +37,8 @@ namespace ProjectMangoRF
         BotAI _BotAI;
         ConsoleLogic _ConsoleLogic;
 
-        Player Player0;
-        Player Player1;
+        public Player Player0;
+        public Player Player1;
 
         public GamePage(NewGamePage RecievedNewGamePage)
         {
@@ -42,27 +46,61 @@ namespace ProjectMangoRF
 
             ChangeTheme();
 
-            Player0 = RecievedNewGamePage.Player0;
-            Player1 = RecievedNewGamePage.Player1;
-
-            if (RecievedNewGamePage.FullRandom == true)
+            if (RecievedNewGamePage.StartFromSave == true)
             {
-                MainActionsPanel.Visibility = Visibility.Collapsed;
-                FullRandom = true;
+                Player0 = new Player();
+                Player1 = new Player();
+
+                LoadFromSaveGame();
+
+                if (FullRandom == true)
+                {
+                    MainActionsPanel.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    SecondsToWait = 5;
+                }
+
+                if (Cheats == true)
+                {
+                    ConsoleGrid.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    ConsoleGrid.Visibility = Visibility.Collapsed;
+                }
             }
             else
             {
-                SecondsToWait = 5;
-            }
+                Player0 = RecievedNewGamePage.Player0;
+                Player1 = RecievedNewGamePage.Player1;
 
-            if(RecievedNewGamePage.Cheats == true)
-            {
-                ConsoleGrid.Visibility = Visibility.Visible;
+                if (RecievedNewGamePage.FullRandom == true)
+                {
+                    MainActionsPanel.Visibility = Visibility.Collapsed;
+                    FullRandom = true;
+                }
+                else
+                {
+                    SecondsToWait = 5;
+                }
+
+                if (RecievedNewGamePage.Cheats == true)
+                {
+                    ConsoleGrid.Visibility = Visibility.Visible;
+                    Cheats = true;
+                }
+                else
+                {
+                    ConsoleGrid.Visibility = Visibility.Collapsed;
+                }
             }
 
             _BotAI = new BotAI();
             _Actions = new Actions();
             _ConsoleLogic = new ConsoleLogic();
+
             Time();
         }
 
@@ -86,6 +124,7 @@ namespace ProjectMangoRF
 
                     if (SecondsToAction <= 0)
                     {
+                        SaveGame();
                         TurnRegulator();
                         SecondsToAction += SecondsToWait;
                     }
@@ -98,7 +137,7 @@ namespace ProjectMangoRF
                 }
                 if(IsDead == true)
                 {
-
+                    DeleteSave();
                 }
 
                 await Task.Delay(250);
@@ -281,21 +320,21 @@ namespace ProjectMangoRF
             //Player0
             if((string)ClickedButton.Tag == "Kick0")
             {
-                _Actions.Kick(Player0, Player1);
+                _Actions.Kick(Player0, Player1, this);
                 ProcessTextBox0.Text = "Player0 kick Player1\n" + ProcessTextBox0.Text;
                 ProcessTextBox1.Text = " \n" + ProcessTextBox1.Text;
                 Turn = false;
             }
             else if ((string)ClickedButton.Tag == "Heal0")
             {
-                _Actions.Heal(Player0);
+                _Actions.Heal(Player0, this);
                 ProcessTextBox0.Text = "Player0 heal themself\n" + ProcessTextBox0.Text;
                 ProcessTextBox1.Text = " \n" + ProcessTextBox1.Text;
                 Turn = false;
             }
             else if ((string)ClickedButton.Tag == "Spell0")
             {
-                _Actions.Spell(Player0, Player1);
+                _Actions.Spell(Player0, Player1, this);
                 ProcessTextBox0.Text = "Player0 use spell\n" + ProcessTextBox0.Text;
                 ProcessTextBox1.Text = " \n" + ProcessTextBox1.Text;
                 Turn = false;
@@ -303,19 +342,19 @@ namespace ProjectMangoRF
             //Player1
             else if ((string)ClickedButton.Tag == "Kick1")
             {
-                _Actions.Kick(Player1, Player0);
+                _Actions.Kick(Player1, Player0, this);
                 ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
                 ProcessTextBox1.Text = "Player1 kick Player0\n" + ProcessTextBox1.Text;
             }
             else if ((string)ClickedButton.Tag == "Heal1")
             {
-                _Actions.Heal(Player1);
+                _Actions.Heal(Player1, this);
                 ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
                 ProcessTextBox1.Text = "Player1 heal themself\n" + ProcessTextBox1.Text;
             }
             else if ((string)ClickedButton.Tag == "Spell1")
             {
-                _Actions.Spell(Player1, Player0);
+                _Actions.Spell(Player1, Player0, this);
                 ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
                 ProcessTextBox1.Text = "Player1 use spell\n" + ProcessTextBox1.Text;
             }
@@ -326,6 +365,166 @@ namespace ProjectMangoRF
                 {
                     _ConsoleLogic.Command(TextConsoleTextBox.Text, this);
                 }
+            }
+        }
+
+        void SaveGame()
+        {
+            string SaveName = "save";
+            string SavePath = Environment.CurrentDirectory + "/saves/" + SaveName + ".sav";
+
+            if (!Directory.Exists(Environment.CurrentDirectory + "/saves"))
+                Directory.CreateDirectory(Environment.CurrentDirectory + "/saves");
+
+            File.Delete(SavePath);
+            try
+            {
+                BinaryWriter binaryWriter = new BinaryWriter(File.Open(SavePath, FileMode.Create));
+
+                //Player0
+                Player0.SetSpellName();
+
+                binaryWriter.Write(Player0.Name);
+
+                binaryWriter.Write(Player0.Lvl);
+                binaryWriter.Write(Player0.MaxXp);
+                binaryWriter.Write(Player0.Xp);
+
+                binaryWriter.Write(Player0.MaxHealth);
+                binaryWriter.Write(Player0.Health);
+                binaryWriter.Write(Player0.Heal);
+                binaryWriter.Write(Player0.Shield);
+
+                binaryWriter.Write(Player0.Damage);
+                binaryWriter.Write(Player0.AdditionalDamage);
+
+                binaryWriter.Write(Player0.SpellName);
+                binaryWriter.Write(Player0.Spell);
+                binaryWriter.Write(Player0.PoisonEffectTime);
+
+                //Player1
+                Player1.SetSpellName();
+
+                binaryWriter.Write(Player1.Name);
+
+                binaryWriter.Write(Player1.Lvl);
+                binaryWriter.Write(Player1.MaxXp);
+                binaryWriter.Write(Player1.Xp);
+
+                binaryWriter.Write(Player1.MaxHealth);
+                binaryWriter.Write(Player1.Health);
+                binaryWriter.Write(Player1.Heal);
+                binaryWriter.Write(Player1.Shield);
+
+                binaryWriter.Write(Player1.Damage);
+                binaryWriter.Write(Player1.AdditionalDamage);
+
+                binaryWriter.Write(Player1.SpellName);
+                binaryWriter.Write(Player1.Spell);
+                binaryWriter.Write(Player1.PoisonEffectTime);
+
+                //game
+
+                binaryWriter.Write(Seconds);
+                binaryWriter.Write(Minutes);
+
+                binaryWriter.Write(SecondsToAction);
+                binaryWriter.Write(SecondsToWait);
+
+                binaryWriter.Write(FullRandom);
+                binaryWriter.Write(Turn);
+                binaryWriter.Write(IsPaused);
+                binaryWriter.Write(IsDead);
+                binaryWriter.Write(Cheats);
+
+                binaryWriter.Dispose();
+            }
+            catch
+            {
+
+            }
+        }
+
+        void DeleteSave()
+        {
+            string SaveName = "save";
+            string SavePath = Environment.CurrentDirectory + "/saves/" + SaveName + ".sav";
+            File.Delete(SavePath);
+        }
+
+        void LoadFromSaveGame()
+        {
+            string SaveName = "save";
+            string SavePath = Environment.CurrentDirectory + "/saves/" + SaveName + ".sav";
+
+            if (Directory.Exists(Environment.CurrentDirectory + "/saves"))
+            {
+                BinaryReader binaryReader = new BinaryReader(File.Open(SavePath, FileMode.Open));
+
+                //Player0
+
+                Player0.Name = binaryReader.ReadString();
+
+                Player0.Lvl = binaryReader.ReadInt32();
+                Player0.MaxXp = binaryReader.ReadInt32();
+                Player0.Xp = binaryReader.ReadInt32();
+
+                Player0.MaxHealth = binaryReader.ReadInt32();
+                Player0.Health = binaryReader.ReadInt32();
+                Player0.Heal = binaryReader.ReadInt32();
+                Player0.Shield = binaryReader.ReadInt32();
+
+                Player0.Damage = binaryReader.ReadInt32();
+                Player0.AdditionalDamage = binaryReader.ReadInt32();
+
+                Player0.SpellName = binaryReader.ReadString();
+                Player0.Spell = binaryReader.ReadInt32();
+                Player0.PoisonEffectTime = binaryReader.ReadInt32();
+
+                Player0.SetSpellName();
+
+                //Player1
+
+                Player1.Name = binaryReader.ReadString();
+
+                Player1.Lvl = binaryReader.ReadInt32();
+                Player1.MaxXp = binaryReader.ReadInt32();
+                Player1.Xp = binaryReader.ReadInt32();
+
+                Player1.MaxHealth = binaryReader.ReadInt32();
+                Player1.Health = binaryReader.ReadInt32();
+                Player1.Heal = binaryReader.ReadInt32();
+                Player1.Shield = binaryReader.ReadInt32();
+
+                Player1.Damage = binaryReader.ReadInt32();
+                Player1.AdditionalDamage = binaryReader.ReadInt32();
+
+                Player1.SpellName = binaryReader.ReadString();
+                Player1.Spell = binaryReader.ReadInt32();
+                Player1.PoisonEffectTime = binaryReader.ReadInt32();
+
+                Player1.SetSpellName();
+
+                //game
+
+                Seconds = binaryReader.ReadDouble();
+                Minutes = binaryReader.ReadInt32();
+
+                SecondsToAction = binaryReader.ReadInt32();
+                SecondsToWait = binaryReader.ReadInt32();
+
+                FullRandom = binaryReader.ReadBoolean();
+                Turn = binaryReader.ReadBoolean();
+                IsPaused = binaryReader.ReadBoolean();
+                IsDead = binaryReader.ReadBoolean();
+                Cheats = binaryReader.ReadBoolean();
+
+                binaryReader.Dispose();
+
+                TimeRegulator();
+                HealthRegulator();
+                StatusRegulator();
+                LevelRegulator();
             }
         }
     }

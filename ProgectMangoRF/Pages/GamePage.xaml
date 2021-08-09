@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:locale = "clr-namespace:ProjectMangoRF.Properties.Locale"
       xmlns:local="clr-namespace:ProjectMangoRF"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
@@ -41,31 +42,31 @@
                     <TextBlock Text="0/100" Name="HealthBar1TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
                 </Grid>
             </StackPanel>
-            
+
         </Grid>
-        
+
         <WrapPanel HorizontalAlignment="Center" Margin="0,30,0,30">
             <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0" TextAlignment="Right"/>
             <Separator Width="5"/>
             <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1"/>
         </WrapPanel>
-        
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Name="MainActionsPanel">
             <StackPanel Orientation="Horizontal" Name="ActionsStackPanel0">
-                <Button Content="Spell" Click="Button_Click" Tag="Spell0" Width="100"/>
-                <Button Content="Heal" Click="Button_Click" Tag="Heal0" Width="100"/>
-                <Button Content="Kick" Click="Button_Click" Tag="Kick0" Width="100"/>
+                <Button Content="{x:Static locale:Locale.Special}" Click="Button_Click" Tag="Spell0" Width="100"/>
+                <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal0" Width="100"/>
+                <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick0" Width="100"/>
             </StackPanel>
             <TextBlock Text="Time" VerticalAlignment="Center" Name="TimeActionsTextBlock" FontSize="18"/>
             <StackPanel Orientation="Horizontal" Name="ActionsStackPanel1">
-                <Button Content="Kick" Click="Button_Click" Tag="Kick1" Width="100"/>
-                <Button Content="Heal" Click="Button_Click" Tag="Heal1" Width="100"/>
-                <Button Content="Spell" Click="Button_Click" Tag="Spell1" Width="100"/>
+                <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick1" Width="100"/>
+                <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal1" Width="100"/>
+                <Button Content="{x:Static locale:Locale.Special}" Click="Button_Click" Tag="Spell1" Width="100"/>
             </StackPanel>
         </StackPanel>
 
-        <Grid Width="300" HorizontalAlignment="Left" Name="ConsoleGrid" Visibility="Visible">
-            <TextBox Margin="0,30,0,30" Style="{StaticResource TextBoxLight}" Name="MainConsoleTextBox"/>
+        <Grid Width="300" HorizontalAlignment="Left" Name="ConsoleGrid" Visibility="Visible" Margin="0,30,0,0">
+            <TextBox Margin="0,0,0,30" Style="{StaticResource TextBoxLight}" Name="MainConsoleTextBox" IsReadOnly="True" Foreground="LawnGreen"/>
             <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Bottom">
                 <TextBox Width="260" Name="TextConsoleTextBox"/>
                 <Button Style="{StaticResource TabBarButtonLight}" Content="" Click="Button_Click" Tag="EnterConsoleBtn" Name="EnterConsoleBtn"/>

@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:locale = "clr-namespace:ProjectMangoRF.Properties.Locale"
       xmlns:local="clr-namespace:ProjectMangoRF"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
@@ -12,26 +13,31 @@
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="DarkMode: " Name="DarkModeTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <TextBlock Text="{x:Static locale:Locale.Language}" Name="LanguageTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <RadioButton Checked="RadioButton_Checked" Content="{x:Static locale:Locale.English}" Tag="En" Name="EnRadioButton" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Checked="RadioButton_Checked" Content="{x:Static locale:Locale.Russian}" Tag="Ru" Name="RuRadioButton" Style="{StaticResource RadioButtonLight}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{x:Static locale:Locale.DarkMode}" Name="DarkModeTextBlock" Style="{StaticResource TextBlockLight}"/>
                     <CheckBox Name="DarkModeCheckBox"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Fullscreen: " Name="FullscreenTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <TextBlock Text="{x:Static locale:Locale.Fullscreen}" Name="FullscreenTextBlock" Style="{StaticResource TextBlockLight}"/>
                     <CheckBox Name="FullscreenCheckBox"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Player name: " Style="{StaticResource TextBlockLight}" Name="PlayerNameTextBlock"/>
+                    <TextBlock Text="{x:Static locale:Locale.PlayerName}" Style="{StaticResource TextBlockLight}" Name="PlayerNameTextBlock"/>
                     <TextBox Width="100" Name="PlayerNameTextBox"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Use old saves: " Name="OldSavesTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <TextBlock Text="{x:Static locale:Locale.UseOldSaves}" Name="OldSavesTextBlock" Style="{StaticResource TextBlockLight}"/>
                     <CheckBox Name="OldSavesCheckBox"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Content="Save" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SaveBtn" Name="SaveBtn"/>
-            <Button Content="Save and restart" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SaveAndRestartBtn" Name="SaveAndRestartBtn"/>
+            <Button Content="{x:Static locale:Locale.Save}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SaveBtn" Name="SaveBtn" Width="Auto" Margin="5"/>
+            <Button Content="{x:Static locale:Locale.SaveAndRestart}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SaveAndRestartBtn" Name="SaveAndRestartBtn" Width="Auto" Margin="5"/>
         </StackPanel>
     </Grid>
 </Page>

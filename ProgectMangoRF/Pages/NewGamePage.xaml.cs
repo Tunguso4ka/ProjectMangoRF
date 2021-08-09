@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -18,11 +20,14 @@ namespace ProjectMangoRF
 
         public bool FullRandom = false;
         public bool Cheats = false;
+        public bool SaveIsReal = false;
+        public bool StartFromSave = false;
 
         public NewGamePage()
         {
             InitializeComponent();
             ChangeTheme();
+            ScanForSaves();
         }
 
         void ChangeTheme()
@@ -45,6 +50,7 @@ namespace ProjectMangoRF
                 UserRadioButtonShield.Style = (Style)FindResource("RadioButtonDark");
                 UserRadioButtonXP.Style = (Style)FindResource("RadioButtonDark");
                 UserRadioButtonRandom.Style = (Style)FindResource("RadioButtonDark");
+                UserRadioButtonDoubleHeal.Style = (Style)FindResource("RadioButtonDark");
 
                 BotRadioButtonBomb.Style = (Style)FindResource("RadioButtonDark");
                 BotRadioButtonPoison.Style = (Style)FindResource("RadioButtonDark");
@@ -52,6 +58,7 @@ namespace ProjectMangoRF
                 BotRadioButtonShield.Style = (Style)FindResource("RadioButtonDark");
                 BotRadioButtonXP.Style = (Style)FindResource("RadioButtonDark");
                 BotRadioButtonRandom.Style = (Style)FindResource("RadioButtonDark");
+                BotRadioButtonDoubleHeal.Style = (Style)FindResource("RadioButtonDark");
             }
         }
 
@@ -136,7 +143,7 @@ namespace ProjectMangoRF
             else if ((string)CheckedRadioButton.Tag == "random")
             {
                 Random _Random = new Random();
-                UserSpecial = _Random.Next(0,7);
+                UserSpecial = _Random.Next(0,6);
             }
         }
 
@@ -171,8 +178,13 @@ namespace ProjectMangoRF
             else if ((string)CheckedRadioButton.Tag == "random")
             {
                 Random _Random = new Random();
-                BotSpecial = _Random.Next(0, 7);
+                BotSpecial = _Random.Next(0, 6);
             }
+        }
+
+        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -196,9 +208,55 @@ namespace ProjectMangoRF
                 Player1.Spell = BotSpecial;
                 MakeStandartInts(Player1);
 
+                StartFromSave = false;
+
+                _GamePage = new GamePage(((MainWindow)Window.GetWindow(this))._NewGamePage);
+                ((MainWindow)Window.GetWindow(this)).Frame0.Navigate(_GamePage);
+            }
+            else if ((string)ClickedButton.Tag == "PlayFromSaveBtn")
+            {
+                StartFromSave = true;
+
                 _GamePage = new GamePage(((MainWindow)Window.GetWindow(this))._NewGamePage);
                 ((MainWindow)Window.GetWindow(this)).Frame0.Navigate(_GamePage);
             }
         }
+
+
+        void ScanForSaves()
+        {
+            List<SavesList> savesLists = new List<SavesList>();
+            if (Directory.Exists(Environment.CurrentDirectory + "/saves"))
+            {
+                string[] SaveFiles = Directory.GetFiles(Environment.CurrentDirectory + @"\saves", "*.sav");
+                if (SaveFiles.Length > 0)
+                {
+                    for (int i = 0; i < SaveFiles.Length; i++)
+                    {
+                        savesLists.Add(new SavesList() { FileName = SaveFiles[i], Tag = i}) ;
+                    }
+                    //savesLists.Add(new SavesList() { FileName = "shit.sav", Tag = 0 });
+
+                    SavesListBox.ItemsSource = savesLists;
+
+                    SavesStackPanel.Visibility = Visibility.Visible;
+                    SaveIsReal = true;
+                    PlayFromSaveBtn.IsEnabled = true;
+                }
+
+                SavesListBox.ItemsSource = savesLists;
+            }
+            else 
+            { 
+                
+            }
+
+        }
+    }
+
+    class SavesList
+    {
+        public string FileName { get; set; }
+        public int Tag { get; set; }
     }
 }

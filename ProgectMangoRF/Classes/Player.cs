@@ -1,4 +1,6 @@
-﻿namespace ProjectMangoRF
+﻿using Locale = ProjectMangoRF.Properties.Locale;
+
+namespace ProjectMangoRF
 {
     public class Player
     {
@@ -17,7 +19,7 @@
         public int Shield { get; set; }
 
         //Damage system
-        public int Damage;
+        public int Damage { get; set; }
         public int AdditionalDamage { get; set; }
 
         //Magic system
@@ -58,22 +60,22 @@
             switch (Spell)
             {
                 case 0:
-                    SpellName = "Bomb";
+                    SpellName = Locale.Locale.Bomb;
                     break;
                 case 1:
-                    SpellName = "Shield";
+                    SpellName = Locale.Locale.Shield;
                     break;
                 case 2:
-                    SpellName = "Double heal";
+                    SpellName = Locale.Locale.DoubleHeal;
                     break;
                 case 3:
-                    SpellName = "Additional Damage potion";
+                    SpellName = Locale.Locale.AdditionalDamagePotion;
                     break;
                 case 4:
-                    SpellName = "Poison potion";
+                    SpellName = Locale.Locale.PoisonPotion;
                     break;
                 case 5:
-                    SpellName = "XP potion";
+                    SpellName = Locale.Locale.XPPotion;
                     break;
             }
 }

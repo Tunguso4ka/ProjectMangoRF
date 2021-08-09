@@ -3,61 +3,84 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:locale = "clr-namespace:ProjectMangoRF.Properties.Locale"
       xmlns:local="clr-namespace:ProjectMangoRF"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="NewGamePage">
 
     <Grid>
-        <StackPanel>
+        <StackPanel Margin="130,0,0,0">
+            
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Cheats:" Name="CheatsTextBlock" Style="{StaticResource TextBlockLight}"/>
+                <TextBlock Text="{x:Static locale:Locale.Cheats}" Name="CheatsTextBlock" Style="{StaticResource TextBlockLight}"/>
                 <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="CheatsCheckBox" Name="CheatsCheckBox"/>
             </StackPanel>
+            
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="With bot:" Name="BotTextBlock" Style="{StaticResource TextBlockLight}"/>
+                <TextBlock Text="{x:Static locale:Locale.Bot}" Name="BotTextBlock" Style="{StaticResource TextBlockLight}"/>
                 <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="BotCheckBox" Name="BotCheckBox" IsChecked="True" IsEnabled="False"/>
             </StackPanel>
+            
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Random server:" Name="RandomServerTextBlock" Style="{StaticResource TextBlockLight}"/>
                 <CheckBox IsEnabled="False"/>
             </StackPanel>
+            
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Full random:" Name="FullRandomTextBlock" Style="{StaticResource TextBlockLight}"/>
+                <TextBlock Text="{x:Static locale:Locale.FullRandom}" Name="FullRandomTextBlock" Style="{StaticResource TextBlockLight}"/>
                 <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="FullRandomCheckBox" Name="FullRandomCheckBox"/>
             </StackPanel>
+
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Connect to:" Name="ConnectTextBlock" Style="{StaticResource TextBlockLight}"/>
             </StackPanel>
+
             <Separator Margin="0,5"/>
+            
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
-                    <TextBlock Text="Your special:" Name="YourSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
-                    <RadioButton Content="Bomb" Name="UserRadioButtonBomb" Style="{StaticResource RadioButtonLight}" IsChecked="True" Checked="UserRadioButton_Checked" Tag="grenade"/>
-                    <RadioButton Content="Shield" Name="UserRadioButtonShield" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="shield"/>
-                    <RadioButton Content="Double heal" Name="UserRadioButtonDoubleHeal" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="ultraheal"/>
-                    <RadioButton Content="Additional Damage potion" Name="UserRadioButtonStrenght" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="additionaldamage"/>
-                    <RadioButton Content="Poison potion" Name="UserRadioButtonPoison" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="poison"/>
-                    <RadioButton Content="XP potion" Name="UserRadioButtonXP" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="xp"/>
-                    <RadioButton Content="Random" Name="UserRadioButtonRandom" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="random"/>
+                    <TextBlock Text="{x:Static locale:Locale.SpecialYour}" Name="YourSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <RadioButton Content="{x:Static locale:Locale.Bomb}" Name="UserRadioButtonBomb" Style="{StaticResource RadioButtonLight}" IsChecked="True" Checked="UserRadioButton_Checked" Tag="grenade"/>
+                    <RadioButton Content="{x:Static locale:Locale.Shield}" Name="UserRadioButtonShield" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="shield"/>
+                    <RadioButton Content="{x:Static locale:Locale.DoubleHeal}" Name="UserRadioButtonDoubleHeal" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="ultraheal"/>
+                    <RadioButton Content="{x:Static locale:Locale.AdditionalDamagePotion}" Name="UserRadioButtonStrenght" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="additionaldamage"/>
+                    <RadioButton Content="{x:Static locale:Locale.PoisonPotion}" Name="UserRadioButtonPoison" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="poison"/>
+                    <RadioButton Content="{x:Static locale:Locale.XPPotion}" Name="UserRadioButtonXP" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="xp"/>
+                    <RadioButton Content="{x:Static locale:Locale.Random}" Name="UserRadioButtonRandom" Style="{StaticResource RadioButtonLight}" Checked="UserRadioButton_Checked" Tag="random"/>
                 </StackPanel>
                 <Separator Margin="5,0"/>
                 <StackPanel Name="BotSpecialStackPanel" Visibility="Visible">
-                    <TextBlock Text="Bot special:" Name="BotSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
-                    <RadioButton Content="Bomb" Name="BotRadioButtonBomb" Style="{StaticResource RadioButtonLight}" IsChecked="True" Checked="BotRadioButton_Checked" Tag="grenade"/>
-                    <RadioButton Content="Shield" Name="BotRadioButtonShield" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="shield"/>
-                    <RadioButton Content="Double heal" Name="BotRadioButtonDoubleHeal" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="ultraheal"/>
-                    <RadioButton Content="Additional Damage potion" Name="BotRadioButtonStrenght" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="additionaldamage"/>
-                    <RadioButton Content="Poison potion" Name="BotRadioButtonPoison" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="poison"/>
-                    <RadioButton Content="XP potion" Name="BotRadioButtonXP" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="xp"/>
-                    <RadioButton Content="Random" Name="BotRadioButtonRandom" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="random"/>
+                    <TextBlock Text="{x:Static locale:Locale.SpecialBot}" Name="BotSpecialTextBlock" Style="{StaticResource TextBlockLight}"/>
+                    <RadioButton Content="{x:Static locale:Locale.Bomb}" Name="BotRadioButtonBomb" Style="{StaticResource RadioButtonLight}" IsChecked="True" Checked="BotRadioButton_Checked" Tag="grenade"/>
+                    <RadioButton Content="{x:Static locale:Locale.Shield}" Name="BotRadioButtonShield" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="shield"/>
+                    <RadioButton Content="{x:Static locale:Locale.DoubleHeal}" Name="BotRadioButtonDoubleHeal" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="ultraheal"/>
+                    <RadioButton Content="{x:Static locale:Locale.AdditionalDamagePotion}" Name="BotRadioButtonStrenght" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="additionaldamage"/>
+                    <RadioButton Content="{x:Static locale:Locale.PoisonPotion}" Name="BotRadioButtonPoison" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="poison"/>
+                    <RadioButton Content="{x:Static locale:Locale.XPPotion}" Name="BotRadioButtonXP" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="xp"/>
+                    <RadioButton Content="{x:Static locale:Locale.Random}" Name="BotRadioButtonRandom" Style="{StaticResource RadioButtonLight}" Checked="BotRadioButton_Checked" Tag="random"/>
                 </StackPanel>
             </StackPanel>
             
         </StackPanel>
+        
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Content="Back" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="BackBtn" Name="BackBtn"/>
-            <Button Content="Play" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PlayBtn" Name="PlayBtn"/>
+            <Button Content="{x:Static locale:Locale.Back}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="BackBtn" Name="BackBtn"/>
+            <Button Content="{x:Static locale:Locale.Play}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PlayBtn" Name="PlayBtn"/>
         </StackPanel>
+
+        <Grid HorizontalAlignment="Left" Name="SavesStackPanel" Visibility="Visible" VerticalAlignment="Stretch" Background="White" Width="120">
+            <Separator Margin="0,5"/>
+            <ListBox x:Name="SavesListBox" BorderBrush="White" Margin="0,0,0,30">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding FileName}" Tag="{Binding Tag}" Style="{StaticResource TextBlockLight}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Button Content="{x:Static locale:Locale.Play}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PlayFromSaveBtn" Name="PlayFromSaveBtn" Height="30" IsEnabled="False" VerticalAlignment="Bottom"/>
+        </Grid>
+
     </Grid>
 </Page>

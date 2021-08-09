@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjectMangoRF"
+      xmlns:locale = "clr-namespace:ProjectMangoRF.Properties.Locale"
       mc:Ignorable="d"
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="MainPage">
@@ -17,21 +18,17 @@
             </StackPanel>
         </ScrollViewer>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBox Name="RFTextBox" Style="{StaticResource TextBoxLight}" Background="#FFC800" IsReadOnly="True" Text="Random Fights" FontSize="36" VerticalAlignment="Center" FontFamily="Segoe UI Black" TextAlignment="Center" Height="120"/>
+            <TextBox Name="RFTextBox" Style="{StaticResource TextBoxLight}" Background="#FFC800" BorderBrush="#FFC800" IsReadOnly="True" Text="Random Fights" FontSize="36" VerticalAlignment="Center" FontFamily="Segoe UI Black" TextAlignment="Center" Height="120"/>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Play" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="NewGameBtn" Name="NewGameBtn" Height="120" Width="240" FontWeight="Bold" FontSize="36"/>
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button Content="&#xEA8C;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="FighterBtn" Name="FighterBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Your hero"/>
-                        <Button Content="&#xF5EE;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PacksBtn" Name="PacksBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Packs"/>
-                        <Button Content="&#xF8B0;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SettingsBtn" Name="SettingsBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Settings"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button Content="&#xEB4F;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ChallengesBtn" Name="ChallengesBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Challenges"/>
-                        <Button Content="&#xF167;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="AboutBtn" Name="AboutBtn" FontFamily="Segoe MDL2 Assets" ToolTip="About"/>
-                        <Button Content="&#xEF2C;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ExitBtn" Name="ExitBtn" FontFamily="Segoe MDL2 Assets" ToolTip="Exit"/>
-                    </StackPanel>
-                </StackPanel>
+                <Button Content="{x:Static locale:Locale.Play}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="NewGameBtn" Name="NewGameBtn" Height="120" Width="240" FontWeight="Bold" FontSize="36"/>
+                <WrapPanel Width="360">
+                    <Button Content="&#xEA8C;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="FighterBtn" Name="FighterBtn" FontFamily="Segoe MDL2 Assets" Visibility="Collapsed"/>
+                    <Button Content="&#xF5EE;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PacksBtn" Name="PacksBtn" FontFamily="Segoe MDL2 Assets" Visibility="Collapsed"/>
+                    <Button Content="&#xF8B0;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="SettingsBtn" Name="SettingsBtn" FontFamily="Segoe MDL2 Assets"/>
+                    <Button Content="&#xEB4F;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ChallengesBtn" Name="ChallengesBtn" FontFamily="Segoe MDL2 Assets" Visibility="Collapsed"/>
+                    <Button Content="&#xF167;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="AboutBtn" Name="AboutBtn" FontFamily="Segoe MDL2 Assets"/>
+                    <Button Content="&#xEF2C;" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="ExitBtn" Name="ExitBtn" FontFamily="Segoe MDL2 Assets"/>
+                </WrapPanel>
             </StackPanel>
         </StackPanel>
     </Grid>

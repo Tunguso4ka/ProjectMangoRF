@@ -57,7 +57,7 @@
             <Setter Property="Width" Value="120"/>
             <Setter Property="Foreground" Value="DimGray"/>
             <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ProjectMangoRF
@@ -19,11 +20,17 @@ namespace ProjectMangoRF
         {
             if (Properties.Settings.Default.DarkMode == true)
             {
-                DarkModeTextBlock.Style = (Style)FindResource("TextBlockDark");
                 SaveBtn.Style = (Style)FindResource("MenuButtonDark");
                 SaveAndRestartBtn.Style = (Style)FindResource("MenuButtonDark");
+
                 PlayerNameTextBlock.Style = (Style)FindResource("TextBlockDark");
                 FullscreenTextBlock.Style = (Style)FindResource("TextBlockDark");
+                LanguageTextBlock.Style = (Style)FindResource("TextBlockDark");
+                OldSavesTextBlock.Style = (Style)FindResource("TextBlockDark");
+                DarkModeTextBlock.Style = (Style)FindResource("TextBlockDark");
+
+                EnRadioButton.Style = (Style)FindResource("RadioButtonDark");
+                RuRadioButton.Style = (Style)FindResource("RadioButtonDark");
             }
         }
 
@@ -63,9 +70,22 @@ namespace ProjectMangoRF
             else if ((string)ClickedButton.Tag == "SaveAndRestartBtn")
             {
                 Save();
-                MainWindow NewMainWindow = new MainWindow();
-                NewMainWindow.Show();
-                ((MainWindow)Window.GetWindow(this)).Close();
+                Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
+            }
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton CheckedRadioButton = (RadioButton)sender;
+            switch((string)CheckedRadioButton.Tag)
+            {
+                case "En":
+                    Properties.Settings.Default.Culture = "en-US";
+                    break;
+                case "Ru":
+                    Properties.Settings.Default.Culture = "ru-RU";
+                    break;
             }
         }
     }

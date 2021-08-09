@@ -25,30 +25,26 @@ namespace ProjectMangoRF
             {
                 case 0:
                     //hit
-                    _Actions.Kick(ActivePlayer, PassivePlayer);
-                    _GamePage.Say(ActivePlayer.Name + " kick " + PassivePlayer.Name);
+                    _Actions.Kick(ActivePlayer, PassivePlayer, _GamePage);
                     break;
 
                 case 1:
                     //heal
                     if(ActivePlayer.Spell == 2)
                     {
-                        _Actions.Spell(ActivePlayer, PassivePlayer);
+                        _Actions.Spell(ActivePlayer, PassivePlayer, _GamePage);
                         ActivePlayer.SetSpellName();
-                        _GamePage.Say(ActivePlayer.Name + " use " + ActivePlayer.SpellName);
                     }
                     else
                     {
-                        _Actions.Heal(ActivePlayer);
-                        _GamePage.Say(ActivePlayer.Name + " heal themself.");
+                        _Actions.Heal(ActivePlayer, _GamePage);
                     }
                     break;
 
                 case 2:
                     //spell
-                    _Actions.Spell(ActivePlayer, PassivePlayer);
+                    _Actions.Spell(ActivePlayer, PassivePlayer, _GamePage);
                     ActivePlayer.SetSpellName();
-                    _GamePage.Say(ActivePlayer.Name + " use " + ActivePlayer.SpellName);
                     break;
             }
         }

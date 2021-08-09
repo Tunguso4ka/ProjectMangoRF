@@ -9,6 +9,6 @@
       Title="AboutPage">
 
     <StackPanel>
-        <TextBox Name="AboutTextBox" Style="{StaticResource TextBoxLight}" TextAlignment="Center" FontSize="24" Text="Just for a test"/>
+        <TextBox Name="AboutTextBox" Style="{StaticResource TextBoxLight}" TextAlignment="Center" FontSize="24" Text="Just for a test" IsReadOnly="True"/>
     </StackPanel>
 </Page>
