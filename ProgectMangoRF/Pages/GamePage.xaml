@@ -46,9 +46,9 @@
         </Grid>
 
         <WrapPanel HorizontalAlignment="Center" Margin="0,30,0,30">
-            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0" TextAlignment="Right"/>
+            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0" TextAlignment="Right" IsReadOnly="True"/>
             <Separator Width="5"/>
-            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1"/>
+            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1" IsReadOnly="True"/>
         </WrapPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Name="MainActionsPanel">
@@ -57,11 +57,11 @@
                 <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal0" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
                 <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick0" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
             </StackPanel>
-            <TextBlock Text="Time" VerticalAlignment="Center" Name="TimeActionsTextBlock" FontSize="18"/>
-            <StackPanel Orientation="Horizontal" Name="ActionsStackPanel1">
-                <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick1" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
-                <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal1" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
+            <TextBlock Text="Time" VerticalAlignment="Center" Name="TimeActionsTextBlock" FontSize="18" Visibility="Collapsed"/>
+            <StackPanel Orientation="Horizontal" Name="ActionsStackPanel1" Visibility="Collapsed">
                 <Button Content="{x:Static locale:Locale.Special}" Click="Button_Click" Tag="Spell1" Width="150" Height="30" Style="{StaticResource MenuButtonLight}"/>
+                <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal1" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
+                <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick1" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
             </StackPanel>
         </StackPanel>
 

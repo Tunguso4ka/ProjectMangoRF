@@ -140,6 +140,7 @@ namespace ProjectMangoRF
                 if(IsDead == true)
                 {
                     DeleteSave();
+                    MainActionsPanel.Visibility = Visibility.Collapsed;
                 }
 
                 await Task.Delay(250);
@@ -328,43 +329,52 @@ namespace ProjectMangoRF
             //Player0
             if((string)ClickedButton.Tag == "Kick0")
             {
+                Turn = true;
                 _Actions.Kick(Player0, Player1, this);
-                ProcessTextBox0.Text = "Player0 kick Player1\n" + ProcessTextBox0.Text;
-                ProcessTextBox1.Text = " \n" + ProcessTextBox1.Text;
-                Turn = false;
+
+                ActionsStackPanel0.Visibility = Visibility.Collapsed;
+                ActionsStackPanel1.Visibility = Visibility.Visible;
             }
             else if ((string)ClickedButton.Tag == "Heal0")
             {
+                Turn = true;
                 _Actions.Heal(Player0, this);
-                ProcessTextBox0.Text = "Player0 heal themself\n" + ProcessTextBox0.Text;
-                ProcessTextBox1.Text = " \n" + ProcessTextBox1.Text;
-                Turn = false;
+
+                ActionsStackPanel0.Visibility = Visibility.Collapsed;
+                ActionsStackPanel1.Visibility = Visibility.Visible;
             }
             else if ((string)ClickedButton.Tag == "Spell0")
             {
+                Turn = true;
                 _Actions.Spell(Player0, Player1, this);
-                ProcessTextBox0.Text = "Player0 use spell\n" + ProcessTextBox0.Text;
-                ProcessTextBox1.Text = " \n" + ProcessTextBox1.Text;
-                Turn = false;
+
+                ActionsStackPanel0.Visibility = Visibility.Collapsed;
+                ActionsStackPanel1.Visibility = Visibility.Visible;
             }
             //Player1
             else if ((string)ClickedButton.Tag == "Kick1")
             {
+                Turn = false;
                 _Actions.Kick(Player1, Player0, this);
-                ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
-                ProcessTextBox1.Text = "Player1 kick Player0\n" + ProcessTextBox1.Text;
+
+                ActionsStackPanel1.Visibility = Visibility.Collapsed;
+                ActionsStackPanel0.Visibility = Visibility.Visible;
             }
             else if ((string)ClickedButton.Tag == "Heal1")
             {
+                Turn = false;
                 _Actions.Heal(Player1, this);
-                ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
-                ProcessTextBox1.Text = "Player1 heal themself\n" + ProcessTextBox1.Text;
+
+                ActionsStackPanel1.Visibility = Visibility.Collapsed;
+                ActionsStackPanel0.Visibility = Visibility.Visible;
             }
             else if ((string)ClickedButton.Tag == "Spell1")
             {
+                Turn = false;
                 _Actions.Spell(Player1, Player0, this);
-                ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
-                ProcessTextBox1.Text = "Player1 use spell\n" + ProcessTextBox1.Text;
+
+                ActionsStackPanel1.Visibility = Visibility.Collapsed;
+                ActionsStackPanel0.Visibility = Visibility.Visible;
             }
 
             else if ((string)ClickedButton.Tag == "EnterConsoleBtn")
