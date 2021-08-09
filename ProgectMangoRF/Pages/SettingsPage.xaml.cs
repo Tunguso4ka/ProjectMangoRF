@@ -31,6 +31,8 @@ namespace ProjectMangoRF
 
                 EnRadioButton.Style = (Style)FindResource("RadioButtonDark");
                 RuRadioButton.Style = (Style)FindResource("RadioButtonDark");
+                CzRadioButton.Style = (Style)FindResource("RadioButtonDark");
+                UkRadioButton.Style = (Style)FindResource("RadioButtonDark");
             }
         }
 
@@ -85,6 +87,12 @@ namespace ProjectMangoRF
                     break;
                 case "Ru":
                     Properties.Settings.Default.Culture = "ru-RU";
+                    break;
+                case "Cz":
+                    Properties.Settings.Default.Culture = "cs-CZ";
+                    break;
+                case "Uk":
+                    Properties.Settings.Default.Culture = "uk-UA";
                     break;
             }
         }

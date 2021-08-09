@@ -118,102 +118,102 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdditionalDamagePotion" xml:space="preserve">
-    <value>Зелье дополнительного урона</value>
+    <value>Další lektvar poškození</value>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>Назад</value>
+    <value>Vrať se</value>
   </data>
   <data name="Bomb" xml:space="preserve">
-    <value>Граната</value>
+    <value>Granát</value>
   </data>
   <data name="Bot" xml:space="preserve">
-    <value>Игра с ботом: </value>
+    <value>S botem: </value>
   </data>
   <data name="Cheats" xml:space="preserve">
-    <value>Читы: </value>
+    <value>Cheaty: </value>
   </data>
   <data name="Czech" xml:space="preserve">
-    <value>Чешский</value>
+    <value>čeština</value>
   </data>
   <data name="DarkMode" xml:space="preserve">
-    <value>Темный режим: </value>
+    <value>Noční téma: </value>
   </data>
   <data name="DoubleHeal" xml:space="preserve">
-    <value>Двойная регенерация здоровья</value>
+    <value>Dvojité uzdravení</value>
   </data>
   <data name="English" xml:space="preserve">
-    <value>Английский</value>
+    <value>Angličtina</value>
   </data>
   <data name="Failure" xml:space="preserve">
-    <value>Неудача: </value>
+    <value>Selhání: </value>
   </data>
   <data name="FullRandom" xml:space="preserve">
-    <value>Режим полной случайности</value>
+    <value>Úplně náhodně</value>
   </data>
   <data name="Fullscreen" xml:space="preserve">
-    <value>Полный экран: </value>
+    <value>Celá obrazovka: </value>
   </data>
   <data name="Heal" xml:space="preserve">
-    <value>Лечение</value>
+    <value>Vyléčit</value>
   </data>
   <data name="HealThemself" xml:space="preserve">
-    <value> лечит себя.</value>
+    <value> uzdrav se sám.</value>
   </data>
   <data name="Kick" xml:space="preserve">
-    <value>Ударить</value>
+    <value>Kop</value>
   </data>
   <data name="KickPlayer" xml:space="preserve">
-    <value> ударил </value>
+    <value> kopl </value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Язык: </value>
+    <value>Jazyk: </value>
   </data>
   <data name="Play" xml:space="preserve">
-    <value>Играть</value>
+    <value>Hrát</value>
   </data>
   <data name="PlayerName" xml:space="preserve">
-    <value>Имя игрока: </value>
+    <value>Jméno hráče: </value>
   </data>
   <data name="PoisonPotion" xml:space="preserve">
-    <value>Зелье отравления</value>
+    <value>Jedovatý lektvar</value>
   </data>
   <data name="Random" xml:space="preserve">
-    <value>Случайная способность</value>
+    <value>Náhodný</value>
   </data>
   <data name="Russian" xml:space="preserve">
-    <value>Русский</value>
+    <value>Ruština</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Сохранить</value>
+    <value>Uložit</value>
   </data>
   <data name="SaveAndRestart" xml:space="preserve">
-    <value>Сохранить и перезапустить</value>
+    <value>Uložit a restartovat</value>
   </data>
   <data name="Shield" xml:space="preserve">
-    <value>Щит</value>
+    <value>Štít</value>
   </data>
   <data name="Special" xml:space="preserve">
-    <value>Способность</value>
+    <value>Speciální</value>
   </data>
   <data name="SpecialBot" xml:space="preserve">
-    <value>Способность бота: </value>
+    <value>Speciální robot: </value>
   </data>
   <data name="SpecialYour" xml:space="preserve">
-    <value>Твоя способность: </value>
+    <value>Vaše speciální: </value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Удача: </value>
+    <value>Úspěch: </value>
   </data>
   <data name="Ukrainian" xml:space="preserve">
-    <value>Украинский</value>
+    <value>ukrajinština</value>
   </data>
   <data name="Use" xml:space="preserve">
-    <value> использовал </value>
+    <value> používá </value>
   </data>
   <data name="UseOldSaves" xml:space="preserve">
-    <value>Использовать старые сохранения: </value>
+    <value>Použijte staré uložení</value>
   </data>
   <data name="XPPotion" xml:space="preserve">
-    <value>Зелье опыта</value>
+    <value>Lektvar XP</value>
   </data>
 </root>

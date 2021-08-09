@@ -16,6 +16,8 @@
                     <TextBlock Text="{x:Static locale:Locale.Language}" Name="LanguageTextBlock" Style="{StaticResource TextBlockLight}"/>
                     <RadioButton Checked="RadioButton_Checked" Content="{x:Static locale:Locale.English}" Tag="En" Name="EnRadioButton" Style="{StaticResource RadioButtonLight}"/>
                     <RadioButton Checked="RadioButton_Checked" Content="{x:Static locale:Locale.Russian}" Tag="Ru" Name="RuRadioButton" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Checked="RadioButton_Checked" Content="{x:Static locale:Locale.Czech}" Tag="Cz" Name="CzRadioButton" Style="{StaticResource RadioButtonLight}"/>
+                    <RadioButton Checked="RadioButton_Checked" Content="{x:Static locale:Locale.Ukrainian}" Tag="Uk" Name="UkRadioButton" Style="{StaticResource RadioButtonLight}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{x:Static locale:Locale.DarkMode}" Name="DarkModeTextBlock" Style="{StaticResource TextBlockLight}"/>

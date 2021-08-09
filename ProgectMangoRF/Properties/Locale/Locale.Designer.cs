@@ -79,7 +79,7 @@ namespace ProjectMangoRF.Properties.Locale {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Bomb.
+        ///   Ищет локализованную строку, похожую на Grenade.
         /// </summary>
         public static string Bomb {
             get {
@@ -102,6 +102,15 @@ namespace ProjectMangoRF.Properties.Locale {
         public static string Cheats {
             get {
                 return ResourceManager.GetString("Cheats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Czech.
+        /// </summary>
+        public static string Czech {
+            get {
+                return ResourceManager.GetString("Czech", resourceCulture);
             }
         }
         
@@ -133,6 +142,15 @@ namespace ProjectMangoRF.Properties.Locale {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Failure: .
+        /// </summary>
+        public static string Failure {
+            get {
+                return ResourceManager.GetString("Failure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Full Random.
         /// </summary>
         public static string FullRandom {
@@ -160,11 +178,29 @@ namespace ProjectMangoRF.Properties.Locale {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на  heal themself..
+        /// </summary>
+        public static string HealThemself {
+            get {
+                return ResourceManager.GetString("HealThemself", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Kick.
         /// </summary>
         public static string Kick {
             get {
                 return ResourceManager.GetString("Kick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на  kick .
+        /// </summary>
+        public static string KickPlayer {
+            get {
+                return ResourceManager.GetString("KickPlayer", resourceCulture);
             }
         }
         
@@ -273,6 +309,33 @@ namespace ProjectMangoRF.Properties.Locale {
         public static string SpecialYour {
             get {
                 return ResourceManager.GetString("SpecialYour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Success: .
+        /// </summary>
+        public static string Success {
+            get {
+                return ResourceManager.GetString("Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ukrainian.
+        /// </summary>
+        public static string Ukrainian {
+            get {
+                return ResourceManager.GetString("Ukrainian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на  use .
+        /// </summary>
+        public static string Use {
+            get {
+                return ResourceManager.GetString("Use", resourceCulture);
             }
         }
         

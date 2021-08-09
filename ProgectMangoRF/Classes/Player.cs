@@ -16,6 +16,7 @@ namespace ProjectMangoRF
         public int MaxHealth { get; set; }
         public int Health { get; set; }
         public int Heal { get; set; }
+        public int Chance { get; set; }
         public int Shield { get; set; }
 
         //Damage system
@@ -40,6 +41,8 @@ namespace ProjectMangoRF
                 Damage += 5;
 
                 PoisonEffectTime = 0;
+
+                Chance = 10;
             }
         }
 
@@ -52,6 +55,18 @@ namespace ProjectMangoRF
             else if (Health < 0)
             {
                 Health = 0;
+            }
+        }
+
+        public void ChanceRegulator()
+        {
+            if (Chance > 10)
+            {
+                Chance = 10;
+            }
+            else if (Chance < 0)
+            {
+                Chance = 0;
             }
         }
 

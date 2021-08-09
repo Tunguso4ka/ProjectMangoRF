@@ -1,4 +1,6 @@
-﻿namespace ProjectMangoRF
+﻿using Locale = ProjectMangoRF.Properties.Locale;
+
+namespace ProjectMangoRF
 {
     public class Actions
     {
@@ -6,22 +8,25 @@
         
         public void Heal(Player ActivePlayer, GamePage _GamePage)
         {
-            if(GetRandom(75))
+            if(GetRandom(ActivePlayer.Chance) == true)
             {
                 ActivePlayer.Health += ActivePlayer.Heal;
-                _GamePage.Say("Success: " + ActivePlayer.Name + " heal themself.");
+                _GamePage.Say(Locale.Locale.Success + ActivePlayer.Name + Locale.Locale.HealThemself);
+
+                ActivePlayer.Chance--;
             }
             else
             {
                 ActivePlayer.PoisonEffectTime += 5;
-                _GamePage.Say("Failure: " + ActivePlayer.Name + " heal themself.");
+                _GamePage.Say(Locale.Locale.Failure + ActivePlayer.Name + Locale.Locale.HealThemself);
+                ActivePlayer.Chance++;
             }
             ActivePlayer.Xp += 5;
         }
 
         public void Kick(Player ActivePlayer, Player PassivePlayer, GamePage _GamePage)
         {
-            if (GetRandom(75))
+            if (GetRandom(ActivePlayer.Chance) == true)
             {
                 int FullDamage = ActivePlayer.Damage + ActivePlayer.AdditionalDamage - PassivePlayer.Shield;
                 if (FullDamage < 0)
@@ -32,12 +37,15 @@
                 PassivePlayer.Shield = 0;
                 PassivePlayer.Health -= FullDamage;
 
-                _GamePage.Say("Success: " + ActivePlayer.Name + " kick " + PassivePlayer.Name);
+                _GamePage.Say(Locale.Locale.Success + ActivePlayer.Name + Locale.Locale.KickPlayer + PassivePlayer.Name);
+
+                ActivePlayer.Chance--;
             }
             else
             {
                 ActivePlayer.Health -= ActivePlayer.Damage;
-                _GamePage.Say("Failure: " + ActivePlayer.Name + " kick " + PassivePlayer.Name);
+                _GamePage.Say(Locale.Locale.Failure + ActivePlayer.Name + Locale.Locale.KickPlayer + PassivePlayer.Name);
+                ActivePlayer.Chance++;
             }
             ActivePlayer.Xp += 5;
         }
@@ -46,7 +54,7 @@
         {
             //spells: grenade 0, shield 1, ultra heal 2, add additional damage 3, poison 4, additional xp 5
 
-            if (GetRandom(75))
+            if (GetRandom(ActivePlayer.Chance) == true)
             {
                 if (ActivePlayer.Spell == 0)
                 {
@@ -73,7 +81,9 @@
                     ActivePlayer.Xp += 20;
                 }
 
-                _GamePage.Say("Success: " + ActivePlayer.Name + " use " + ActivePlayer.SpellName);
+                _GamePage.Say(Locale.Locale.Success + ActivePlayer.Name + Locale.Locale.Use + ActivePlayer.SpellName);
+
+                ActivePlayer.Chance--;
             }
             else
             {
@@ -89,15 +99,16 @@
                 {
                     ActivePlayer.PoisonEffectTime += 5;
                 }
-                _GamePage.Say("Failure: " + ActivePlayer.Name + " use " + ActivePlayer.SpellName);
+                _GamePage.Say(Locale.Locale.Failure + ActivePlayer.Name + Locale.Locale.Use + ActivePlayer.SpellName);
+
+                ActivePlayer.Chance++;
             }
             ActivePlayer.Xp += 10;
         }
 
         bool GetRandom(int MinValue)
         {
-            int Result = random.Next(MinValue, 100);
-            if (Result >= MinValue)
+            if (random.Next(10) < MinValue)
             {
                 return true;
             }

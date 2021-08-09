@@ -124,13 +124,16 @@
     <value>Back</value>
   </data>
   <data name="Bomb" xml:space="preserve">
-    <value>Bomb</value>
+    <value>Grenade</value>
   </data>
   <data name="Bot" xml:space="preserve">
     <value>With bot: </value>
   </data>
   <data name="Cheats" xml:space="preserve">
     <value>Cheats: </value>
+  </data>
+  <data name="Czech" xml:space="preserve">
+    <value>Czech</value>
   </data>
   <data name="DarkMode" xml:space="preserve">
     <value>Night theme: </value>
@@ -141,6 +144,9 @@
   <data name="English" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="Failure" xml:space="preserve">
+    <value>Failure: </value>
+  </data>
   <data name="FullRandom" xml:space="preserve">
     <value>Full Random</value>
   </data>
@@ -150,8 +156,14 @@
   <data name="Heal" xml:space="preserve">
     <value>Heal</value>
   </data>
+  <data name="HealThemself" xml:space="preserve">
+    <value> heal themself.</value>
+  </data>
   <data name="Kick" xml:space="preserve">
     <value>Kick</value>
+  </data>
+  <data name="KickPlayer" xml:space="preserve">
+    <value> kick </value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language: </value>
@@ -188,6 +200,15 @@
   </data>
   <data name="SpecialYour" xml:space="preserve">
     <value>Your special: </value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success: </value>
+  </data>
+  <data name="Ukrainian" xml:space="preserve">
+    <value>Ukrainian</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value> use </value>
   </data>
   <data name="UseOldSaves" xml:space="preserve">
     <value>Use old saves</value>

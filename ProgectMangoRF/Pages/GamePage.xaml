@@ -53,22 +53,22 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Name="MainActionsPanel">
             <StackPanel Orientation="Horizontal" Name="ActionsStackPanel0">
-                <Button Content="{x:Static locale:Locale.Special}" Click="Button_Click" Tag="Spell0" Width="100"/>
-                <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal0" Width="100"/>
-                <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick0" Width="100"/>
+                <Button Content="{x:Static locale:Locale.Special}" Click="Button_Click" Tag="Spell0" Width="150" Height="30" Style="{StaticResource MenuButtonLight}"/>
+                <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal0" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
+                <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick0" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
             </StackPanel>
             <TextBlock Text="Time" VerticalAlignment="Center" Name="TimeActionsTextBlock" FontSize="18"/>
             <StackPanel Orientation="Horizontal" Name="ActionsStackPanel1">
-                <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick1" Width="100"/>
-                <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal1" Width="100"/>
-                <Button Content="{x:Static locale:Locale.Special}" Click="Button_Click" Tag="Spell1" Width="100"/>
+                <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick1" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
+                <Button Content="{x:Static locale:Locale.Heal}" Click="Button_Click" Tag="Heal1" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
+                <Button Content="{x:Static locale:Locale.Special}" Click="Button_Click" Tag="Spell1" Width="150" Height="30" Style="{StaticResource MenuButtonLight}"/>
             </StackPanel>
         </StackPanel>
 
-        <Grid Width="300" HorizontalAlignment="Left" Name="ConsoleGrid" Visibility="Visible" Margin="0,30,0,0">
+        <Grid Width="270" HorizontalAlignment="Left" Name="ConsoleGrid" Visibility="Visible" Margin="0,30,0,0">
             <TextBox Margin="0,0,0,30" Style="{StaticResource TextBoxLight}" Name="MainConsoleTextBox" IsReadOnly="True" Foreground="LawnGreen"/>
             <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Bottom">
-                <TextBox Width="260" Name="TextConsoleTextBox"/>
+                <TextBox Width="230" Name="TextConsoleTextBox"/>
                 <Button Style="{StaticResource TabBarButtonLight}" Content="" Click="Button_Click" Tag="EnterConsoleBtn" Name="EnterConsoleBtn"/>
             </StackPanel>
         </Grid>

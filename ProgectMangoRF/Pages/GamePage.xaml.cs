@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Locale = ProjectMangoRF.Properties.Locale;
 
 namespace ProjectMangoRF
 {
@@ -134,6 +135,7 @@ namespace ProjectMangoRF
                     HealthRegulator();
                     StatusRegulator();
                     LevelRegulator();
+                    ChanceRegulator();
                 }
                 if(IsDead == true)
                 {
@@ -149,11 +151,11 @@ namespace ProjectMangoRF
             switch(Turn)
             {
                 case true:
-                    ProcessTextBox0.Text = Text + "\n" + ProcessTextBox0.Text;
+                    ProcessTextBox0.Text = Text + " - " + TimeTextBlock.Text + "\n" + ProcessTextBox0.Text;
                     ProcessTextBox1.Text = " \n" + ProcessTextBox1.Text;
                     break;
                 case false:
-                    ProcessTextBox1.Text = Text + "\n" + ProcessTextBox1.Text;
+                    ProcessTextBox1.Text = TimeTextBlock.Text + " - " + Text + "\n" + ProcessTextBox1.Text;
                     ProcessTextBox0.Text = " \n" + ProcessTextBox0.Text;
                     break;
             }
@@ -250,44 +252,44 @@ namespace ProjectMangoRF
             switch(Player0.Spell)
             {
                 case 0:
-                    SpellName0TextBlock.Text = "Grenade";
+                    SpellName0TextBlock.Text = Locale.Locale.Bomb;
                     break;
                 case 1:
-                    SpellName0TextBlock.Text = "Shield: " + Player0.Shield;
+                    SpellName0TextBlock.Text = Locale.Locale.Shield + ": " + Player0.Shield;
                     break;
                 case 2:
-                    SpellName0TextBlock.Text = "Ultra Heal";
+                    SpellName0TextBlock.Text = Locale.Locale.DoubleHeal;
                     break;
                 case 3:
-                    SpellName0TextBlock.Text = "Additional Damage: " + Player0.AdditionalDamage;
+                    SpellName0TextBlock.Text = Locale.Locale.AdditionalDamagePotion + ": " + Player0.AdditionalDamage;
                     break;
                 case 4:
-                    SpellName0TextBlock.Text = "Poison time: " + Player1.PoisonEffectTime;
+                    SpellName0TextBlock.Text = Locale.Locale.PoisonPotion + ": " + Player1.PoisonEffectTime;
                     break;
                 case 5:
-                    SpellName0TextBlock.Text = "Additional XP";
+                    SpellName0TextBlock.Text = Locale.Locale.XPPotion;
                     break;
             }
 
             switch (Player1.Spell)
             {
                 case 0:
-                    SpellName1TextBlock.Text = "Grenade";
+                    SpellName1TextBlock.Text = Locale.Locale.Bomb;
                     break;
                 case 1:
-                    SpellName1TextBlock.Text = "Shield: " + Player1.Shield;
+                    SpellName1TextBlock.Text = Locale.Locale.Shield + ": " + Player1.Shield;
                     break;
                 case 2:
-                    SpellName1TextBlock.Text = "Ultra Heal";
+                    SpellName1TextBlock.Text = Locale.Locale.DoubleHeal;
                     break;
                 case 3:
-                    SpellName1TextBlock.Text = "Additional Damage: " + Player1.AdditionalDamage;
+                    SpellName1TextBlock.Text = Locale.Locale.AdditionalDamagePotion + ": " + Player1.AdditionalDamage;
                     break;
                 case 4:
-                    SpellName1TextBlock.Text = "Poison time: " + Player0.PoisonEffectTime;
+                    SpellName1TextBlock.Text = Locale.Locale.PoisonPotion + ": " + Player0.PoisonEffectTime;
                     break;
                 case 5:
-                    SpellName1TextBlock.Text = "Additional XP";
+                    SpellName1TextBlock.Text = Locale.Locale.XPPotion;
                     break;
             }
 
@@ -311,6 +313,12 @@ namespace ProjectMangoRF
                     Turn = true;
                     break;
             }
+        }
+
+        void ChanceRegulator()
+        {
+            Player0.ChanceRegulator();
+            Player1.ChanceRegulator();
         }
 
         //Button
@@ -393,6 +401,7 @@ namespace ProjectMangoRF
                 binaryWriter.Write(Player0.MaxHealth);
                 binaryWriter.Write(Player0.Health);
                 binaryWriter.Write(Player0.Heal);
+                binaryWriter.Write(Player0.Chance);
                 binaryWriter.Write(Player0.Shield);
 
                 binaryWriter.Write(Player0.Damage);
@@ -472,6 +481,7 @@ namespace ProjectMangoRF
                 Player0.MaxHealth = binaryReader.ReadInt32();
                 Player0.Health = binaryReader.ReadInt32();
                 Player0.Heal = binaryReader.ReadInt32();
+                Player0.Chance = binaryReader.ReadInt32();
                 Player0.Shield = binaryReader.ReadInt32();
 
                 Player0.Damage = binaryReader.ReadInt32();

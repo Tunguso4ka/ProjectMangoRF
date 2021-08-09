@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdditionalDamagePotion" xml:space="preserve">
-    <value>Зелье дополнительного урона</value>
+    <value>Зілля додаткового шкоди</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Назад</value>
@@ -127,93 +127,93 @@
     <value>Граната</value>
   </data>
   <data name="Bot" xml:space="preserve">
-    <value>Игра с ботом: </value>
+    <value>Гра з ботом: </value>
   </data>
   <data name="Cheats" xml:space="preserve">
-    <value>Читы: </value>
+    <value>Чити: </value>
   </data>
   <data name="Czech" xml:space="preserve">
-    <value>Чешский</value>
+    <value>Чеський</value>
   </data>
   <data name="DarkMode" xml:space="preserve">
-    <value>Темный режим: </value>
+    <value>Темний режим: </value>
   </data>
   <data name="DoubleHeal" xml:space="preserve">
-    <value>Двойная регенерация здоровья</value>
+    <value>Подвійна регенерація здоров'я</value>
   </data>
   <data name="English" xml:space="preserve">
-    <value>Английский</value>
+    <value>Aнглійська</value>
   </data>
   <data name="Failure" xml:space="preserve">
-    <value>Неудача: </value>
+    <value>Невдача: </value>
   </data>
   <data name="FullRandom" xml:space="preserve">
-    <value>Режим полной случайности</value>
+    <value>Режим повної випадковості</value>
   </data>
   <data name="Fullscreen" xml:space="preserve">
-    <value>Полный экран: </value>
+    <value>Повний екран: </value>
   </data>
   <data name="Heal" xml:space="preserve">
-    <value>Лечение</value>
+    <value>Лікування</value>
   </data>
   <data name="HealThemself" xml:space="preserve">
-    <value> лечит себя.</value>
+    <value> лікує себе.</value>
   </data>
   <data name="Kick" xml:space="preserve">
-    <value>Ударить</value>
+    <value>Вдарити</value>
   </data>
   <data name="KickPlayer" xml:space="preserve">
-    <value> ударил </value>
+    <value> вдарив </value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Язык: </value>
+    <value>Мова: </value>
   </data>
   <data name="Play" xml:space="preserve">
-    <value>Играть</value>
+    <value>Грати</value>
   </data>
   <data name="PlayerName" xml:space="preserve">
-    <value>Имя игрока: </value>
+    <value>Ім'я гравця: </value>
   </data>
   <data name="PoisonPotion" xml:space="preserve">
-    <value>Зелье отравления</value>
+    <value>Зілля отруєння</value>
   </data>
   <data name="Random" xml:space="preserve">
-    <value>Случайная способность</value>
+    <value>Випадкова здатність</value>
   </data>
   <data name="Russian" xml:space="preserve">
     <value>Русский</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Сохранить</value>
+    <value>Зберегти</value>
   </data>
   <data name="SaveAndRestart" xml:space="preserve">
-    <value>Сохранить и перезапустить</value>
+    <value>Зберегти та перезапустити</value>
   </data>
   <data name="Shield" xml:space="preserve">
     <value>Щит</value>
   </data>
   <data name="Special" xml:space="preserve">
-    <value>Способность</value>
+    <value>Здатність</value>
   </data>
   <data name="SpecialBot" xml:space="preserve">
-    <value>Способность бота: </value>
+    <value>Здатність бота: </value>
   </data>
   <data name="SpecialYour" xml:space="preserve">
-    <value>Твоя способность: </value>
+    <value>Твоя здатність: </value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Удача: </value>
   </data>
   <data name="Ukrainian" xml:space="preserve">
-    <value>Украинский</value>
+    <value>Українська</value>
   </data>
   <data name="Use" xml:space="preserve">
-    <value> использовал </value>
+    <value> використовував </value>
   </data>
   <data name="UseOldSaves" xml:space="preserve">
-    <value>Использовать старые сохранения: </value>
+    <value>Використовувати старі збереження: </value>
   </data>
   <data name="XPPotion" xml:space="preserve">
-    <value>Зелье опыта</value>
+    <value>зілля досвіду</value>
   </data>
 </root>

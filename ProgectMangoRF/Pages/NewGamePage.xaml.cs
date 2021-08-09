@@ -104,6 +104,7 @@ namespace ProjectMangoRF
             _Player.MaxHealth = 100;
             _Player.Health = 100;
             _Player.Heal = 15;
+            _Player.Chance = 10;
             _Player.Shield = 0;
 
             _Player.Damage = 10;
