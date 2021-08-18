@@ -214,6 +214,15 @@ namespace ProjectMangoRF.Properties.Locale {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Music volume: .
+        /// </summary>
+        public static string MusicVolume {
+            get {
+                return ResourceManager.GetString("MusicVolume", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Play.
         /// </summary>
         public static string Play {

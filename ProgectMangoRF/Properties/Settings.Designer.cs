@@ -94,5 +94,17 @@ namespace ProjectMangoRF.Properties {
                 this["Culture"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("75")]
+        public double MusicVolume {
+            get {
+                return ((double)(this["MusicVolume"]));
+            }
+            set {
+                this["MusicVolume"] = value;
+            }
+        }
     }
 }

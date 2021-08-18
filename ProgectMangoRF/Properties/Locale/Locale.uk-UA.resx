@@ -168,6 +168,9 @@
   <data name="Language" xml:space="preserve">
     <value>Мова: </value>
   </data>
+  <data name="MusicVolume" xml:space="preserve">
+    <value>Гучність музики: </value>
+  </data>
   <data name="Play" xml:space="preserve">
     <value>Грати</value>
   </data>

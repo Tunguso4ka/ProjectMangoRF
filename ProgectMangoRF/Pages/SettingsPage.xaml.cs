@@ -28,6 +28,7 @@ namespace ProjectMangoRF
                 LanguageTextBlock.Style = (Style)FindResource("TextBlockDark");
                 OldSavesTextBlock.Style = (Style)FindResource("TextBlockDark");
                 DarkModeTextBlock.Style = (Style)FindResource("TextBlockDark");
+                MusicVolumeTextBlock.Style = (Style)FindResource("TextBlockDark");
 
                 EnRadioButton.Style = (Style)FindResource("RadioButtonDark");
                 RuRadioButton.Style = (Style)FindResource("RadioButtonDark");
@@ -42,8 +43,25 @@ namespace ProjectMangoRF
             if (Properties.Settings.Default.DarkMode == true) { DarkModeCheckBox.IsChecked = true; }
             //Fullscreen
             if (Properties.Settings.Default.IsFullscreen == true) { FullscreenCheckBox.IsChecked = true; }
+            //Language
+            switch(Properties.Settings.Default.Culture)
+            {
+                case "en-US":
+                    EnRadioButton.IsChecked = true;
+                    break;
+                case "ru-RU":
+                    RuRadioButton.IsChecked = true;
+                    break;
+                case "uk-UA":
+                    UkRadioButton.IsChecked = true;
+                    break;
+                case "cs-CZ":
+                    CzRadioButton.IsChecked = true;
+                    break;
+            }
 
             PlayerNameTextBox.Text = Properties.Settings.Default.PlayerName;
+            MusicVolumeSlider.Value = Properties.Settings.Default.MusicVolume;
         }
 
         void Save()
@@ -95,6 +113,12 @@ namespace ProjectMangoRF
                     Properties.Settings.Default.Culture = "uk-UA";
                     break;
             }
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Slider _Slider = (Slider)sender;
+            Properties.Settings.Default.MusicVolume = _Slider.Value;
         }
     }
 }

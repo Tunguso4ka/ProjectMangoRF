@@ -125,6 +125,7 @@ namespace ProjectMangoRF
 
                     if (SecondsToAction <= 0)
                     {
+                        SecondsToAction = 0;
                         SaveGame();
                         TurnRegulator();
                         SecondsToAction += SecondsToWait;
@@ -141,6 +142,8 @@ namespace ProjectMangoRF
                 {
                     DeleteSave();
                     MainActionsPanel.Visibility = Visibility.Collapsed;
+                    Say("Win!");
+                    break;
                 }
 
                 await Task.Delay(250);
@@ -531,7 +534,7 @@ namespace ProjectMangoRF
                 Minutes = binaryReader.ReadInt32();
 
                 SecondsToAction = binaryReader.ReadInt32();
-                SecondsToWait = binaryReader.ReadInt32();
+                int a = binaryReader.ReadInt32();
 
                 FullRandom = binaryReader.ReadBoolean();
                 Turn = binaryReader.ReadBoolean();

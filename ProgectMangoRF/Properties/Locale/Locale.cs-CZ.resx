@@ -168,6 +168,9 @@
   <data name="Language" xml:space="preserve">
     <value>Jazyk: </value>
   </data>
+  <data name="MusicVolume" xml:space="preserve">
+    <value>Hlasitost hudby: </value>
+  </data>
   <data name="Play" xml:space="preserve">
     <value>Hrát</value>
   </data>

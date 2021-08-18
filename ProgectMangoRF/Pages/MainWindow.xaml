@@ -28,14 +28,14 @@
     <Border BorderThickness="5" BorderBrush="AliceBlue">
         <Grid>
             <Grid Name="TabBar" Height="30" VerticalAlignment="Top">
-                <Button Content="&#xF0D5;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Back" Name="BackBtn" HorizontalAlignment="Left" ToolTip="Back"/>
+                <Button Content="&#xE973;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Back" Name="BackBtn" HorizontalAlignment="Left" ToolTip="Back"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Name="RightTabBar">
-                    <Button Content="&#xEF2D;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn" ToolTip="Minimize"/>
-                    <Button Content="&#xF0D8;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" ToolTip="Maximize"/>
-                    <Button Content="&#xEF2C;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn" ToolTip="Close"/>
+                    <Button Content="&#xE921;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn" ToolTip="Minimize"/>
+                    <Button Content="&#xE922;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" ToolTip="Maximize"/>
+                    <Button Content="&#xE8BB;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Close" Name="CloseBtn" ToolTip="Close"/>
                 </StackPanel>
             </Grid>
-            <Frame Name="Frame0" NavigationUIVisibility="Hidden" Margin="5,30,5,5"/>
+            <Frame Name="Frame0" NavigationUIVisibility="Hidden" Margin="5,30,5,5" Navigated="Frame0_Navigated"/>
             <ProgressBar Height="10" VerticalAlignment="Bottom" IsIndeterminate="True" Background="Transparent" BorderBrush="Transparent" Foreground="#FFC800" Name="LoadingProgressBar" Visibility="Collapsed"/>
         </Grid>
     </Border>

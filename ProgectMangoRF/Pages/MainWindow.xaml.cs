@@ -15,12 +15,16 @@ namespace ProjectMangoRF
         public NewGamePage _NewGamePage;
         public AboutPage _AboutPage;
 
+        MusicLogic _MusicLogic;
+
         public MainWindow()
         {
             Pages();
             InitializeComponent();
             ApplySettings();
             Frame0.Navigate(_MainPage);
+            _MusicLogic.CreateMediaPlayer();
+            PlayMusic();
         }
 
         void ApplySettings()
@@ -55,6 +59,8 @@ namespace ProjectMangoRF
             _SettingsPage = new SettingsPage();
             _NewGamePage = new NewGamePage();
             _AboutPage = new AboutPage();
+
+            _MusicLogic = new MusicLogic();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -69,12 +75,12 @@ namespace ProjectMangoRF
                 if (this.WindowState == WindowState.Maximized)
                 {
                     WindowState = WindowState.Normal;
-                    MaxiBtn.Content = "";
+                    MaxiBtn.Content = "";
                 }
                 else
                 {
                     this.WindowState = WindowState.Maximized;
-                    MaxiBtn.Content = "";
+                    MaxiBtn.Content = "";
                 }
             }
             else if ((string)ClickedButton.Tag == "Close")
@@ -90,6 +96,10 @@ namespace ProjectMangoRF
                 {
                     Frame0.GoBack();
                 }
+                else
+                {
+                    BackBtn.Visibility = Visibility.Collapsed;
+                }
             }
         }
 
@@ -104,9 +114,26 @@ namespace ProjectMangoRF
             {
                 WindowStyle = WindowStyle.SingleBorderWindow;
                 this.WindowState = WindowState.Maximized;
-                MaxiBtn.Content = "";
+                MaxiBtn.Content = "";
                 WindowStyle = WindowStyle.None;
             }
+        }
+
+        private void Frame0_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            if (Frame0.CanGoBack)
+            {
+                BackBtn.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BackBtn.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        public void PlayMusic()
+        {
+            _MusicLogic.Play();
         }
     }
 }

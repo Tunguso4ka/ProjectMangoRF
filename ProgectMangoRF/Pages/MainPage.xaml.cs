@@ -9,12 +9,10 @@ namespace ProjectMangoRF
     /// </summary>
     public partial class MainPage : Page
     {
-        int ContinueClicks;
         public MainPage()
         {
             InitializeComponent();
             ChangeTheme();
-            News1TextBox.Text = "Sorry no news today.";
         }
 
         void ChangeTheme()
@@ -28,9 +26,6 @@ namespace ProjectMangoRF
                 ChallengesBtn.Style = (Style)FindResource("MenuButtonDark");
                 FighterBtn.Style = (Style)FindResource("MenuButtonDark");
                 PacksBtn.Style = (Style)FindResource("MenuButtonDark");
-
-                NewsTextBox.Style = (Style)FindResource("TextBoxDark");
-                News1TextBox.Style = (Style)FindResource("TextBoxDark");
             }
         }
 
