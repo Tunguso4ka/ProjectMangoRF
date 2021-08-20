@@ -10,45 +10,45 @@
       Title="GamePage">
 
     <Grid>
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="White">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            
+            <WrapPanel Orientation="Horizontal">
                 <Grid>
                     <ProgressBar Name="HealthBar0" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
                     <TextBlock Text="0/100" Name="HealthBar0TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
                 </Grid>
-                <WrapPanel VerticalAlignment="Center">
-                    <Separator Width="5"/>
-                    <TextBlock Text="Name0" Name="Name0TextBlock" FontSize="18"/>
-                    <Separator Width="5"/>
-                    <TextBlock Text="SpellName0" Name="SpellName0TextBlock" FontSize="18"/>
-                    <Separator Width="5"/>
-                    <TextBlock Text="Lvl0" Name="Lvl0TextBlock" FontSize="18"/>
-                </WrapPanel>
-            </StackPanel>
+                <Separator Width="5"/>
+                <TextBlock Text="Name0" Name="Name0TextBlock" FontSize="18"/>
+                <Separator Width="5"/>
+                <TextBlock Text="SpellName0" Name="SpellName0TextBlock" FontSize="18"/>
+                <Separator Width="5"/>
+                <TextBlock Text="Lvl0" Name="Lvl0TextBlock" FontSize="18"/>
+            </WrapPanel>
 
-            <TextBlock Text="Time" VerticalAlignment="Center" HorizontalAlignment="Center" Name="TimeTextBlock" FontSize="18"/>
+            <TextBlock Text="Time" TextAlignment="Center" VerticalAlignment="Center" Name="TimeTextBlock" FontSize="18" Width="50" Grid.Column="1"/>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <WrapPanel VerticalAlignment="Center">
-                    <TextBlock Text="Lvl1" Name="Lvl1TextBlock" FontSize="18"/>
-                    <Separator Width="5"/>
-                    <TextBlock Text="SpellName1" Name="SpellName1TextBlock" FontSize="18"/>
-                    <Separator Width="5"/>
-                    <TextBlock Text="Name1" Name="Name1TextBlock" FontSize="18"/>
-                    <Separator Width="5"/>
-                </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+                <TextBlock Text="Lvl1" Name="Lvl1TextBlock" FontSize="18"/>
+                <Separator Width="5"/>
+                <TextBlock Text="SpellName1" Name="SpellName1TextBlock" FontSize="18"/>
+                <Separator Width="5"/>
+                <TextBlock Text="Name1" Name="Name1TextBlock" FontSize="18"/>
+                <Separator Width="5"/>
                 <Grid>
                     <ProgressBar Name="HealthBar1" Style="{StaticResource HealthProgressBarLight}" Foreground="Green"/>
                     <TextBlock Text="0/100" Name="HealthBar1TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
                 </Grid>
-            </StackPanel>
-
+            </WrapPanel>
         </Grid>
 
         <WrapPanel HorizontalAlignment="Center" Margin="0,30,0,30">
-            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0" TextAlignment="Right" IsReadOnly="True"/>
-            <Separator Width="5"/>
-            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1" IsReadOnly="True"/>
+            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox0" TextAlignment="Right" IsReadOnly="True" MinWidth="350"/>
+            <TextBox Style="{StaticResource TextBoxLight}" Text="Start" Name="ProcessTextBox1" IsReadOnly="True" MinWidth="350"/>
         </WrapPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Name="MainActionsPanel">
@@ -64,13 +64,5 @@
                 <Button Content="{x:Static locale:Locale.Kick}" Click="Button_Click" Tag="Kick1" Width="100" Height="30" Style="{StaticResource MenuButtonLight}"/>
             </StackPanel>
         </StackPanel>
-
-        <Grid Width="270" HorizontalAlignment="Left" Name="ConsoleGrid" Visibility="Visible" Margin="0,30,0,0">
-            <TextBox Margin="0,0,0,30" Style="{StaticResource TextBoxLight}" Name="MainConsoleTextBox" IsReadOnly="True" Foreground="LawnGreen"/>
-            <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Bottom">
-                <TextBox Width="230" Name="TextConsoleTextBox"/>
-                <Button Style="{StaticResource TabBarButtonLight}" Content="" Click="Button_Click" Tag="EnterConsoleBtn" Name="EnterConsoleBtn"/>
-            </StackPanel>
-        </Grid>
     </Grid>
 </Page>

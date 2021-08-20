@@ -36,7 +36,6 @@ namespace ProjectMangoRF
         //Players
         Actions _Actions;
         BotAI _BotAI;
-        ConsoleLogic _ConsoleLogic;
 
         public Player Player0;
         public Player Player1;
@@ -62,15 +61,6 @@ namespace ProjectMangoRF
                 {
                     SecondsToWait = 5;
                 }
-
-                if (Cheats == true)
-                {
-                    ConsoleGrid.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    ConsoleGrid.Visibility = Visibility.Collapsed;
-                }
             }
             else
             {
@@ -87,20 +77,10 @@ namespace ProjectMangoRF
                     SecondsToWait = 5;
                 }
 
-                if (RecievedNewGamePage.Cheats == true)
-                {
-                    ConsoleGrid.Visibility = Visibility.Visible;
-                    Cheats = true;
-                }
-                else
-                {
-                    ConsoleGrid.Visibility = Visibility.Collapsed;
-                }
             }
 
             _BotAI = new BotAI();
             _Actions = new Actions();
-            _ConsoleLogic = new ConsoleLogic();
 
             Time();
         }
@@ -378,14 +358,6 @@ namespace ProjectMangoRF
 
                 ActionsStackPanel1.Visibility = Visibility.Collapsed;
                 ActionsStackPanel0.Visibility = Visibility.Visible;
-            }
-
-            else if ((string)ClickedButton.Tag == "EnterConsoleBtn")
-            {
-                if(TextConsoleTextBox.Text != "")
-                {
-                    _ConsoleLogic.Command(TextConsoleTextBox.Text, this);
-                }
             }
         }
 

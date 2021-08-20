@@ -16,7 +16,7 @@ namespace ProjectMangoRF
         public AboutPage _AboutPage;
 
         MusicLogic _MusicLogic;
-
+        ConsoleLogic _ConsoleLogic;
         public MainWindow()
         {
             Pages();
@@ -42,6 +42,7 @@ namespace ProjectMangoRF
                 MaxiBtn.Style = (Style)FindResource("TabBarButtonDark");
                 CloseBtn.Style = (Style)FindResource("TabBarButtonDark");
                 BackBtn.Style = (Style)FindResource("TabBarButtonDark");
+                ConsoleOpenBtn.Style = (Style)FindResource("TabBarButtonDark");
             }
         }
         void Fullscreen()
@@ -61,6 +62,7 @@ namespace ProjectMangoRF
             _AboutPage = new AboutPage();
 
             _MusicLogic = new MusicLogic();
+            _ConsoleLogic = new ConsoleLogic();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -101,6 +103,24 @@ namespace ProjectMangoRF
                     BackBtn.Visibility = Visibility.Collapsed;
                 }
             }
+            else if ((string)ClickedButton.Tag == "EnterConsole")
+            {
+                if (TextConsoleTextBox.Text != "")
+                {
+                    _ConsoleLogic.Command(TextConsoleTextBox.Text, this);
+                }
+            }
+            else if ((string)ClickedButton.Tag == "ConsoleOpen")
+            {
+                if (ConsoleGrid.Visibility == Visibility.Collapsed)
+                {
+                    ConsoleGrid.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    ConsoleGrid.Visibility = Visibility.Collapsed;
+                }
+            }
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -116,6 +136,11 @@ namespace ProjectMangoRF
                 this.WindowState = WindowState.Maximized;
                 MaxiBtn.Content = "";
                 WindowStyle = WindowStyle.None;
+                WindowBorder.BorderThickness = new Thickness(5);
+            }
+            else
+            {
+                WindowBorder.BorderThickness = new Thickness(1);
             }
         }
 

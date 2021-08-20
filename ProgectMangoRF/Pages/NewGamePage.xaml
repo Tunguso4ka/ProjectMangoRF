@@ -65,8 +65,8 @@
         </StackPanel>
         
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Content="{x:Static locale:Locale.Back}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="BackBtn" Name="BackBtn"/>
-            <Button Content="{x:Static locale:Locale.Play}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PlayBtn" Name="PlayBtn"/>
+            <Button Content="{x:Static locale:Locale.Back}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="BackBtn" Name="BackBtn" IsCancel="True"/>
+            <Button Content="{x:Static locale:Locale.Play}" Style="{StaticResource MenuButtonLight}" Click="Button_Click" Tag="PlayBtn" Name="PlayBtn" IsDefault="True"/>
         </StackPanel>
 
         <Grid HorizontalAlignment="Left" Name="SavesStackPanel" Visibility="Visible" VerticalAlignment="Stretch" Background="White" Width="220">

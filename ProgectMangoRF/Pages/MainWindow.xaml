@@ -16,7 +16,7 @@
         MinHeight="600"
         MinWidth="800"
         
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="CanResize"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         StateChanged="Window_StateChanged"
         
@@ -25,10 +25,13 @@
         <WindowChrome x:Name="WindowChromeBorders" NonClientFrameEdges="None" GlassFrameThickness="5" ResizeBorderThickness="5" CaptionHeight="0">
         </WindowChrome>
     </WindowChrome.WindowChrome>
-    <Border BorderThickness="5" BorderBrush="AliceBlue">
+    <Border BorderThickness="1" BorderBrush="AliceBlue" Name="WindowBorder">
         <Grid>
             <Grid Name="TabBar" Height="30" VerticalAlignment="Top">
-                <Button Content="&#xE973;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Back" Name="BackBtn" HorizontalAlignment="Left" ToolTip="Back"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Name="LeftTabBar">
+                    <Button Content="&#xE973;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Back" Name="BackBtn" ToolTip="Back" IsCancel="True"/>
+                    <Button Content="&#xE737;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="ConsoleOpen" Name="ConsoleOpenBtn" ToolTip="ConsoleOpen" IsCancel="True"/>
+                </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Name="RightTabBar">
                     <Button Content="&#xE921;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Minimize" Name="MiniBtn" ToolTip="Minimize"/>
                     <Button Content="&#xE922;" Style="{StaticResource TabBarButtonLight}" Click="Button_Click" Tag="Maximize" Name="MaxiBtn" ToolTip="Maximize"/>
@@ -36,6 +39,13 @@
                 </StackPanel>
             </Grid>
             <Frame Name="Frame0" NavigationUIVisibility="Hidden" Margin="5,30,5,5" Navigated="Frame0_Navigated"/>
+            <Grid Margin="0,30,0,0" Height="500" VerticalAlignment="Top" Name="ConsoleGrid" Visibility="Collapsed">
+                <TextBox Margin="0,0,0,30" Style="{StaticResource TextBoxLight}" Name="MainConsoleTextBox" IsReadOnly="True" Foreground="LawnGreen"/>
+                <Grid Height="30" VerticalAlignment="Bottom">
+                    <TextBox Margin="0,0,40,0" Name="TextConsoleTextBox"/>
+                    <Button Style="{StaticResource TabBarButtonLight}" Content="" Click="Button_Click" Tag="EnterConsole" Name="EnterConsoleBtn" HorizontalAlignment="Right"/>
+                </Grid>
+            </Grid>
             <ProgressBar Height="10" VerticalAlignment="Bottom" IsIndeterminate="True" Background="Transparent" BorderBrush="Transparent" Foreground="#FFC800" Name="LoadingProgressBar" Visibility="Collapsed"/>
         </Grid>
     </Border>
